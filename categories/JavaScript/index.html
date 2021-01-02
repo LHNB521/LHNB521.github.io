@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>LH</title>
+  <title>分类: JavaScript | LH</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -321,351 +321,18 @@
 </header>
     <main class="main" style="margin-top: 60px;">
       
-<link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/css/swiper.min.css" rel="stylesheet">
 
-
-
-<div class="swiper-length" style="display: none;">1</div>
-<div id="appSwiper"
-  class="swiper-no-swiping"
-  @mouseenter="stopAutoPlay()" 
-  @mouseleave="startAutoPlay()"
->
-  <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
-    
-      
-        
-        
-      
-        
-        
-      
-        
-        
-          
-          <swiper-slide>
-            <div class="item swiper-lazy" data-background="https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e35af9dab0a3ee1b9f7.jpg!sswm" style=" background-size: 90000px; 
-            background-position: center center;">
-              <div class="flag">
-                <div class="img-mask swiper-lazy" data-background="https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e35af9dab0a3ee1b9f7.jpg!sswm" style="height: 100%; background-size: cover; 
-                  background-position: center center;">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
-                </div>
-                <div class="flag-text">
-                  <div>
-                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">JavaScript数组去重</div>
-                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">数组去重，一般都是在面试题上看到，一般是要求手写数组去重方法的代码。如果被提问到数组去重的方法有哪些？如果你能回答出十种方法，面试官可能会对你刮目相看。    在真实的项目中碰到的数组去重，一般都是后台去处理，很好让前端处理数组去重。虽然日</div>
-                  </div>
-                  <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2020/12/30/javascript-shu-zu-qu-chong/" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
-                </div>
-              </div>
-            </div>
-
-          </swiper-slide>
-        
-      
-    <div class="swiper-pagination" slot="pagination" style="display: none;"></div>
-    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style="display: none;"></div>
-    <div class="swiper-button-next swiper-button-white" slot="button-next" style="display: none;"></div>
-    
-  </swiper>
+<div class="lazyload" data-original="/medias/categoryDetail.jpg" style="width: 100%;height: 50vh;overflow: hidden;background-size: cover; 
+background-position: center center;">
 </div>
-
-<script src="/js/swiper.min.js"></script>
-
-
-<script src="/js/vue-awesome-swiper.js"></script>
-
-
-<script src="/js/swiper.animate1.0.3.min.js"></script>
-
-<script type="text/javascript">
-  Vue.use(window.VueAwesomeSwiper)
-</script>
-<script>
-  let autoplay = 'true';
-  let delay = '5000';
-  let loop = JSON.parse('true');
-  let effect = 'slide';
-  let swiperLength = parseInt(document.querySelector(".swiper-length").innerText);
-  var vm = new Vue({
-    el: '#appSwiper',
-    data: {
-      swiperOptions: {
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true // 允许点击小圆点跳转
-        },
-        loop: loop ? true : false,
-        effect, // fade
-        autoplay: (autoplay && swiperLength > 1) ? {
-  　　　　delay,
-  　　　　disableOnInteraction: false // 手动切换之后继续自动轮播
-    　　} : false,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        lazy: {
-          loadPrevNext: true,
-        },
-        on:{
-          init: function() {
-            swiperAnimateCache(this); //隐藏动画元素 
-            swiperAnimate(this); //初始化完成开始动画
-          }, 
-          slideChangeTransitionEnd: function(){ 
-            swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
-          } 
-        }
-        // Some Swiper option/callback...
-      }
-    },
-    computed: {
-      swiper() {
-        return this.$refs.mySwiper.$swiper
-      }
-    },
-    mounted() {
-      // console.log('Current Swiper instance object', this.swiper)
-      // this.swiper.slideTo(0, 1000, false)
-    },
-    methods: {
-      stopAutoPlay() {
-        (autoplay && swiperLength > 1) && this.swiper.autoplay.stop();
-      },
-      startAutoPlay() {
-        (autoplay && swiperLength > 1) && this.swiper.autoplay.start();
-      },
-      slideChangeTransitionEnd() {
-        console.log('1');
-      }
-    },
-    created() {}
-  })
-</script>
-
-<style>
-.swiper-container {
-  overflow: hidden;
-  z-index: 0;
-}
-.swiper-slide {
-  height: 350px;
-  position: relative;
-}
-.swiper-button-prev,
-.swiper-button-next {
-  padding: 10px 10px;
-  transition: background 0.2s;
-}
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background: rgba(0, 0, 0, 0.2);
-}
-.swiper-slide .item {
-  width: 100%;
-  height: 100%;
-}
-.flag {
-  position: relative;
-  width: 60%;
-  margin: 0 auto;
-  color: #ffffff;
-  height: 100%;
-  background: #000;
-}
-.flag img {
-  min-height: 100%;
-}
-.flag-text {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  width: 80%;
-  height: 280px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.flag-text .title {
-  font-size: 1.8rem;
-}
-.flag-text .excerpt {
-  width: 70%;
-  line-height: 27px;
-  height: 135px;
-  margin-top: 2%;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
-  overflow: hidden;
-}
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  background-color: #42b983;
-}
-.img-mask {
-  opacity:0.6; filter: alpha(opacity=60);
-}
-.flag-text .read-more {
-  margin-bottom: 30px;
-  padding: 5px 15px;
-  color: #ffffff;
-  border-radius: 20px;
-}
-@media (min-width: 992px) {
-  .swiper-button-prev {
-    margin-left: 20%;
-    transform: translateX(-180%);
-  }
-  .swiper-button-next {
-    margin-right: 20%;
-    transform: translateX(180%);
-  }
-  .flag-text .title {
-    width: 80%;
-    line-height: 35px;
-    max-height: 70px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-  }
-}
-@media (max-width: 992px) {
-  .flag {
-    width: 100%;
-  }
-  .flag-text .title {
-    font-size: 1.5rem;
-    margin-top: 50px;
-  }
-  .flag-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    height: 100%;
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
-  .flag-text .excerpt {
-    width: 100%;
-    line-height: 20px;
-    height: 100px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
-    overflow: hidden;
-  }
-  .flag-text .read-more {
-    margin-bottom: 80px;
-  }
-}
-@media (max-width: 992px) and (min-width: 551px) {
-  .flag-text .excerpt {
-    width: 70%;
-  }
-}
-@media (max-width: 551px) {
-  .swiper-slide {
-    height: 250px;
-  }
-  .flag-text .title {
-    line-height: 30px;
-    max-height: 60px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-    margin-top: 20px;
-  }
-  .flag-text .excerpt {
-    font-size: 1rem;
-    line-height: 20px;
-    height: 80px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-  }
-  .flag-text .excerpt { 
-    margin-top: 10px;
-  }
-  .flag-text .read-more {
-    margin-top: 10px;
-    margin-bottom: 50px;
-  }
-  .swiper-button-prev,
-  .swiper-button-next {
-    transform: scale(0.5);
-  }
-  .swiper-button-prev {
-    left: 0;
-  }
-  .swiper-button-next {
-    right: 0;
-  }
-}
-</style>
-
-
-
-<div class="topArticle" data-aos="fade-up">
-	<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>推荐文章</h3>
-	<div class="articles">
-		
-			
-				<div class="article-link">
-					
-					<div class="article lazyload" data-original="/medias/3.jpg" style="background-size: cover; 
-						background-position: center center;">
-					</div>
-					<div class="text">
-						<div class="text-main">
-							<div class="title"><a href="/2021/01/02/javascript-shu-zu/">JavaScript变量、数组</a></div>
-							<div class="content">
-								JS变量、数组一，变量1.ECMAScript的变量是松散型变量。*松散型变量：可以用来保存任何类型的数据，换句话来说，
-							</div>
-						</div>
-						<a href="/2021/01/02/javascript-shu-zu/" class="more">
-							<i class="fa fa-eye" aria-hidden="true"></i>阅读更多
-						</a>
-					</div>
-				</div>
-			
-		
-			
-		
-			
-				<div class="article-link">
-					
-					<div class="article lazyload" data-original="https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e35af9dab0a3ee1b9f7.jpg!sswm" style="background-size: cover; 
-						background-position: center center;">
-					</div>
-					<div class="text">
-						<div class="text-main">
-							<div class="title"><a href="/2020/12/30/javascript-shu-zu-qu-chong/">JavaScript数组去重</a></div>
-							<div class="content">
-								数组去重，一般都是在面试题上看到，一般是要求手写数组去重方法的代码。如果被提问到数组去重的方法有哪些？如果你能回答出十种
-							</div>
-						</div>
-						<a href="/2020/12/30/javascript-shu-zu-qu-chong/" class="more">
-							<i class="fa fa-eye" aria-hidden="true"></i>阅读更多
-						</a>
-					</div>
-				</div>
-			
-		
-	</div>
-</div>
-
-
-
-
-<section class="posts">
-  
-    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;">
+<div class="category">
+  <div class="category-name">
+    <div class="name" style="background-color: #85C1E9;">JavaScript 分类</div>
+  </div>
+  <section class="posts">
+    
+    <article class="post" data-aos="fade-up"
+      style="flex-direction: row-reverse;">
       <div class="post-main">
         <div class="post-info">
           <div class="post-time">
@@ -692,12 +359,9 @@
             </div>
           </div>
           <div class="post-img-mobile">
-            
-              
-              <a href="/2021/01/02/javascript-shu-zu/" class="lazyload" data-original="/medias/3.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
+            <a href="/2021/01/02/javascript-shu-zu/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
+              background-position: center center;">
+            </a>
           </div>
           <div class="post-content">
             JS变量、数组一，变量1.ECMAScript的变量是松散型变量。*松散型变量：可以用来保存任何类型的数据，换句话来说，每个变量仅仅是一个用于保存的占位符而而已。*定义变量要是用var操作符。（var是一个关键字），后跟变量名（既是一个标识
@@ -710,132 +374,15 @@
         </div>
       </div>
       <div class="post-img">
-        
-          <a href="/2021/01/02/javascript-shu-zu/" class="lazyload" data-original="/medias/3.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
+        <a href="/2021/01/02/javascript-shu-zu/" style="background: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm');background-size: cover; 
+          background-position: center center;">
+        </a>
       </div>
     </article>
-  
-    <article class="post" data-aos="fade-up" style="">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-01-02</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/01/02/htmldom/">HTMLDOM</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/01/02/htmldom/" class="lazyload" data-original="/medias/9.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            HTML DOM 简介HTML DOM定义了访问和操作HTML文档标准如果想要学习该知识用该具备的知识：
-
-HTML
-CSS
-JavaScript什么是DOM？
-
-DOM是W3C（万维网联盟）的标准。DOM定义了访问HTML和XML文档的标
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/01/02/htmldom/">
-            <i class="iconfont iconmore" style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/01/02/htmldom/" class="lazyload" data-original="/medias/9.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-  
-    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2020-12-30</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2020/12/30/javascript-shu-zu-qu-chong/">JavaScript数组去重</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/JavaSctipt/">JavaSctipt</a>
+    
+  </section>
 </div>
 
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2020/12/30/javascript-shu-zu-qu-chong/" class="lazyload" data-original="/medias/11.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            数组去重，一般都是在面试题上看到，一般是要求手写数组去重方法的代码。如果被提问到数组去重的方法有哪些？如果你能回答出十种方法，面试官可能会对你刮目相看。    在真实的项目中碰到的数组去重，一般都是后台去处理，很好让前端处理数组去重。虽然日
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2020/12/30/javascript-shu-zu-qu-chong/">
-            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2020/12/30/javascript-shu-zu-qu-chong/" class="lazyload" data-original="/medias/11.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-  
-</section>
-
-
-<!-- 雪花和花瓣特效 -->
-
-  
-    <script src="/js/snow.js"></script>
-  
-
-
-  
     </main>
     <div class="footer bg-color">
   <div class="footer-main">
