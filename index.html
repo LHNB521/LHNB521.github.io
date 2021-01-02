@@ -325,9 +325,9 @@
 
 
 
-<div class="swiper-length" style="display: none;">2</div>
+<div class="swiper-length" style="display: none;">1</div>
 <div id="appSwiper"
-  class=""
+  class="swiper-no-swiping"
   @mouseenter="stopAutoPlay()" 
   @mouseleave="startAutoPlay()"
 >
@@ -335,36 +335,6 @@
     
       
         
-        
-      
-        
-        
-          
-          <swiper-slide>
-            <div class="item swiper-lazy" data-background="https://image.baidu.com/search/detail?ct=503316480&amp;z=undefined&amp;tn=baiduimagedetail&amp;ipn=d&amp;word=tupian&amp;step_word=&amp;ie=utf-8&amp;in=&amp;cl=2&amp;lm=-1&amp;st=undefined&amp;hd=1&amp;latest=0&amp;copyright=0&amp;cs=1603365312,3218205429&amp;os=1116313301,536553700&amp;simid=4189071781,572287113&amp;pn=3&amp;rn=1&amp;di=117480&amp;ln=1237&amp;fr=&amp;fmq=1609318952919_R&amp;fm=&amp;ic=undefined&amp;s=undefined&amp;se=&amp;sme=&amp;tab=0&amp;width=undefined&amp;height=undefined&amp;face=undefined&amp;is=0,0&amp;istype=0&amp;ist=&amp;jit=&amp;bdtype=0&amp;spn=0&amp;pi=0&amp;gsm=0&amp;objurl=https%3A%2F%2Fgimg2.baidu.com%2Fimage_search%2Fsrc%3Dhttp%253A%252F%252Fa0.att.hudong.com%252F52%252F62%252F31300542679117141195629117826.jpg%26refer%3Dhttp%253A%252F%252Fa0.att.hudong.com%26app%3D2002%26size%3Df9999%2C10000%26q%3Da80%26n%3D0%26g%3D0n%26fmt%3Djpeg%3Fsec%3D1611910954%26t%3D0bc0986058580055dae029c71a3ab33e&amp;rpstart=0&amp;rpnum=0&amp;adpicid=0&amp;force=undefined" style=" background-size: 90000px; 
-            background-position: center center;">
-              <div class="flag">
-                <div class="img-mask swiper-lazy" data-background="https://image.baidu.com/search/detail?ct=503316480&amp;z=undefined&amp;tn=baiduimagedetail&amp;ipn=d&amp;word=tupian&amp;step_word=&amp;ie=utf-8&amp;in=&amp;cl=2&amp;lm=-1&amp;st=undefined&amp;hd=1&amp;latest=0&amp;copyright=0&amp;cs=1603365312,3218205429&amp;os=1116313301,536553700&amp;simid=4189071781,572287113&amp;pn=3&amp;rn=1&amp;di=117480&amp;ln=1237&amp;fr=&amp;fmq=1609318952919_R&amp;fm=&amp;ic=undefined&amp;s=undefined&amp;se=&amp;sme=&amp;tab=0&amp;width=undefined&amp;height=undefined&amp;face=undefined&amp;is=0,0&amp;istype=0&amp;ist=&amp;jit=&amp;bdtype=0&amp;spn=0&amp;pi=0&amp;gsm=0&amp;objurl=https%3A%2F%2Fgimg2.baidu.com%2Fimage_search%2Fsrc%3Dhttp%253A%252F%252Fa0.att.hudong.com%252F52%252F62%252F31300542679117141195629117826.jpg%26refer%3Dhttp%253A%252F%252Fa0.att.hudong.com%26app%3D2002%26size%3Df9999%2C10000%26q%3Da80%26n%3D0%26g%3D0n%26fmt%3Djpeg%3Fsec%3D1611910954%26t%3D0bc0986058580055dae029c71a3ab33e&amp;rpstart=0&amp;rpnum=0&amp;adpicid=0&amp;force=undefined" style="height: 100%; background-size: cover; 
-                  background-position: center center;">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
-                </div>
-                <div class="flag-text">
-                  <div>
-                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">JavaHTML DOM</div>
-                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">HTML DOM 简介HTML DOM定义了访问和操作HTML文档标准如果想要学习该知识用该具备的知识：
-
-HTML
-CSS
-JavaScript什么是DOM？
-
-DOM是W3C（万维网联盟）的标准。DOM定义了访问HTML和XML文档的标</div>
-                  </div>
-                  <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2020/12/30/javahtml-dom/" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
-                </div>
-              </div>
-            </div>
-
-          </swiper-slide>
         
       
         
@@ -391,9 +361,9 @@ DOM是W3C（万维网联盟）的标准。DOM定义了访问HTML和XML文档的�
           </swiper-slide>
         
       
-    <div class="swiper-pagination" slot="pagination" style=""></div>
-    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style=""></div>
-    <div class="swiper-button-next swiper-button-white" slot="button-next" style=""></div>
+    <div class="swiper-pagination" slot="pagination" style="display: none;"></div>
+    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style="display: none;"></div>
+    <div class="swiper-button-next swiper-button-white" slot="button-next" style="display: none;"></div>
     
   </swiper>
 </div>
@@ -647,29 +617,6 @@ DOM是W3C（万维网联盟）的标准。DOM定义了访问HTML和XML文档的�
 			
 				<div class="article-link">
 					
-					<div class="article lazyload" data-original="https://image.baidu.com/search/detail?ct=503316480&amp;z=undefined&amp;tn=baiduimagedetail&amp;ipn=d&amp;word=tupian&amp;step_word=&amp;ie=utf-8&amp;in=&amp;cl=2&amp;lm=-1&amp;st=undefined&amp;hd=1&amp;latest=0&amp;copyright=0&amp;cs=1603365312,3218205429&amp;os=1116313301,536553700&amp;simid=4189071781,572287113&amp;pn=3&amp;rn=1&amp;di=117480&amp;ln=1237&amp;fr=&amp;fmq=1609318952919_R&amp;fm=&amp;ic=undefined&amp;s=undefined&amp;se=&amp;sme=&amp;tab=0&amp;width=undefined&amp;height=undefined&amp;face=undefined&amp;is=0,0&amp;istype=0&amp;ist=&amp;jit=&amp;bdtype=0&amp;spn=0&amp;pi=0&amp;gsm=0&amp;objurl=https%3A%2F%2Fgimg2.baidu.com%2Fimage_search%2Fsrc%3Dhttp%253A%252F%252Fa0.att.hudong.com%252F52%252F62%252F31300542679117141195629117826.jpg%26refer%3Dhttp%253A%252F%252Fa0.att.hudong.com%26app%3D2002%26size%3Df9999%2C10000%26q%3Da80%26n%3D0%26g%3D0n%26fmt%3Djpeg%3Fsec%3D1611910954%26t%3D0bc0986058580055dae029c71a3ab33e&amp;rpstart=0&amp;rpnum=0&amp;adpicid=0&amp;force=undefined" style="background-size: cover; 
-						background-position: center center;">
-					</div>
-					<div class="text">
-						<div class="text-main">
-							<div class="title"><a href="/2020/12/30/javahtml-dom/">JavaHTML DOM</a></div>
-							<div class="content">
-								HTML DOM 简介HTML DOM定义了访问和操作HTML文档标准如果想要学习该知识用该具备的知识：
-
-HTML
-C
-							</div>
-						</div>
-						<a href="/2020/12/30/javahtml-dom/" class="more">
-							<i class="fa fa-eye" aria-hidden="true"></i>阅读更多
-						</a>
-					</div>
-				</div>
-			
-		
-			
-				<div class="article-link">
-					
 					<div class="article lazyload" data-original="https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e35af9dab0a3ee1b9f7.jpg!sswm" style="background-size: cover; 
 						background-position: center center;">
 					</div>
@@ -757,65 +704,6 @@ DOM是W3C（万维网联盟）的标准。DOM定义了访问HTML和XML文档的�
             <span class="post-time">2020-12-30</span>
           </div>
           <div class="post-title">
-            <a class="post-title-link" href="/2020/12/30/javahtml-dom/">JavaHTML DOM</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/HTML/">HTML</a>
-</div>
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2020/12/30/javahtml-dom/" class="lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            HTML DOM 简介HTML DOM定义了访问和操作HTML文档标准如果想要学习该知识用该具备的知识：
-
-HTML
-CSS
-JavaScript什么是DOM？
-
-DOM是W3C（万维网联盟）的标准。DOM定义了访问HTML和XML文档的标
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2020/12/30/javahtml-dom/">
-            <i class="iconfont iconmore" style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2020/12/30/javahtml-dom/" class="lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-  
-    <article class="post" data-aos="fade-up" style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2020-12-30</span>
-          </div>
-          <div class="post-title">
             <a class="post-title-link" href="/2020/12/30/javascript-shu-zu-qu-chong/">JavaScript数组去重</a>
           </div>
           <div class="post-meta">
@@ -848,7 +736,7 @@ DOM是W3C（万维网联盟）的标准。DOM定义了访问HTML和XML文档的�
         </div>
         <div class="post-more">
           <a href="/2020/12/30/javascript-shu-zu-qu-chong/">
-            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
+            <i class="iconfont iconmore" style="" title="阅读更多"></i>
           </a>
         </div>
       </div>
