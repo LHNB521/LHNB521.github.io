@@ -362,9 +362,11 @@
         
       </div>
       <div class="post-content">
-        <h1 id="JS变量、数组"><a href="#JS变量、数组" class="headerlink" title="JS变量、数组"></a>JS变量、数组</h1><h2 id="一，变量"><a href="#一，变量" class="headerlink" title="一，变量"></a>一，变量</h2><p>1.ECMAScript的变量是松散型变量。<br>*松散型变量：可以用来保存任何类型的数据，换句话来说，每个变量仅仅是一个用于保存的占位符而而已。<br>*定义变量要是用var操作符。（var是一个关键字），后跟变量名（既是一个标识符）。<br>如下：</p>
+        <h1 id="JS变量、数组"><a href="#JS变量、数组" class="headerlink" title="JS变量、数组"></a>JS变量、数组</h1><h2 id="一，变量"><a href="#一，变量" class="headerlink" title="一，变量"></a>一，变量</h2><p>1.ECMAScript的变量是松散型变量。</p>
+<p>松散型变量：可以用来保存任何类型的数据，换句话来说，每个变量仅仅是一个用于保存的占位符而而已。</p>
+<p>定义变量要是用var操作符。（var是一个关键字），后跟变量名（既是一个标识符）。<br>如下：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> message<span class="token punctuation">;</span></code></pre>
-<p>*改代码就是定义了一个名字为message的变量，该变量可以保存任何类型的数据。<br><strong>注意：</strong><em>既用var操作符定义的变量将成为该变量的作用域的局部变量。</em><br>如果在函数中使用var定义一个变量，那么这个变量在函数退出后就会被销毁。<br>例如<em>;</em><br>错误例子：</p>
+<p>改代码就是定义了一个名字为message的变量，该变量可以保存任何类型的数据。<br><strong>注意：</strong><em>既用var操作符定义的变量将成为该变量的作用域的局部变量。</em><br>如果在函数中使用var定义一个变量，那么这个变量在函数退出后就会被销毁。<br>例如<em>;</em><br>错误例子：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">var</span> message<span class="token operator">=</span><span class="token string">"hi"</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//局部变量</span>
 <span class="token punctuation">}</span>
@@ -376,7 +378,7 @@
   <span class="token function">alert</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h2 id="二-数据类型"><a href="#二-数据类型" class="headerlink" title="二.数据类型"></a>二.数据类型</h2><p>1.ECMAScript中有<strong>5中简单的数据类型（也称为基本数据类型）</strong>；<br><strong>5种数据类型:Undefind,NULL,Boolean,Number,String.</strong><br>*<strong>**还有一种复杂的数据类型：</strong>Object，**（Object 本质上是由一组无序的名值对组成的。ECMAScript<br>不支持任何创建自定义类型的机制，而所有值最终都将是上述 6 种数据类型之一。）<br>1.注意：对为声明的变量，执行typeof操作符都返回了undefined值。<br><em>即便未初始化的变量会自动被赋予 undefined 值，但显式地初始化变量依然是</em><br><em>明智的选择。如果能够做到这一点，那么当 typeof 操作符返回 “undefined” 值时，</em><br><em>我们就知道被检测的变量还没有被声明，而不是尚未初始化。</em><br>如：</p>
+<h2 id="二-数据类型"><a href="#二-数据类型" class="headerlink" title="二.数据类型"></a>二.数据类型</h2><p>1.ECMAScript中有<strong>5中简单的数据类型（也称为基本数据类型）</strong>；<br><strong>5种数据类型:Undefind,NULL,Boolean,Number,String.</strong><br><strong>还有一种复杂的数据类型：</strong>Object，（Object 本质上是由一组无序的名值对组成的。ECMAScript<br>不支持任何创建自定义类型的机制，而所有值最终都将是上述 6 种数据类型之一。）<br>1.注意：对为声明的变量，执行typeof操作符都返回了undefined值。<br><em>即便未初始化的变量会自动被赋予 undefined 值，但显式地初始化变量依然是</em><br><em>明智的选择。如果能够做到这一点，那么当 typeof 操作符返回 “undefined” 值时，</em><br><em>我们就知道被检测的变量还没有被声明，而不是尚未初始化。</em><br>如：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> message<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这个变量声明之后默认取得了 undefined 值</span>
 <span class="token comment" spellcheck="true">// 下面这个变量并没有声明</span>
 <span class="token comment" spellcheck="true">// var age</span>
