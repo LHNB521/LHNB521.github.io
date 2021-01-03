@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>JaCSS定位详解 | LH</title>
+  <title>JavaScript核心知识 | LH</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -323,10 +323,10 @@
       
 
 
-<div class="post-detail-header lazyload" data-original="/medias/9.jpg" style="background: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" data-original="/medias/6.jpg" style="background: no-repeat; background-size: cover; 
   background-position: center center;">
   
-    <span class="title">JaCSS定位详解</span>
+    <span class="title">JavaScript核心知识</span>
   
 </div>
 <div class="row justify-center">
@@ -336,7 +336,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-01-02</span>
+        <span class="post-time">2021-01-03</span>
       </div>
       
       <div class="post-tags-categories">
@@ -344,8 +344,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/CSS/" class="">
-              CSS
+            <a href="/tags/js/" class="">
+              js
             </a>
           
         </div>
@@ -354,154 +354,749 @@
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           
-            <a href="/categories/CSS/" class="">
-              CSS
+            <a href="/categories/JavaScript/" class="">
+              JavaScript
             </a>
           
         </div>
         
       </div>
       <div class="post-content">
-        <h1 id="CSS定位详解"><a href="#CSS定位详解" class="headerlink" title="CSS定位详解"></a>CSS定位详解</h1><p><strong>CSS有个重要的基本属性，前端开发必须掌握：<code>display</code> 和<code>position</code></strong><br><code>display</code>属性指定网页的布局。两个重要的布局：弹性布局<code>flex</code>和网格布局<code>grid</code>。</p>
-<h2 id="一、position属性的作用"><a href="#一、position属性的作用" class="headerlink" title="一、position属性的作用"></a>一、position属性的作用</h2><p><code>position</code>属性用来指定一个元素在网页上的位置，一共有5种定位方式，即<code>position</code>属性的主要五个值。</p>
-<ul>
-<li>static</li>
-<li>relative</li>
-<li>fixed</li>
-<li>absolute</li>
-<li>sticky</li>
+        <h1 id="js核心知识"><a href="#js核心知识" class="headerlink" title="js核心知识"></a>js核心知识</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><ul>
+<li>js基本的数据类型和关键点</li>
+<li>变量，作用域和内存问题</li>
+<li>垃圾回收机制</li>
+<li>面向对象的程序设计</li>
+<li>实现类与继承的经典方式</li>
+<li>BOM和DOM对象</li>
+<li>DOM扩展与高级API介绍</li>
+<li>高级编程技巧</li>
+<li>跨文档消息传递和ajax封装</li>
+<li>web worker基本实现与demo<h1 id="一-Number类型关键点讲解"><a href="#一-Number类型关键点讲解" class="headerlink" title="一. Number类型关键点讲解"></a>一. Number类型关键点讲解</h1><h3 id="1-进制问题"><a href="#1-进制问题" class="headerlink" title="1.进制问题"></a>1.进制问题</h3></li>
 </ul>
-<h2 id="二、static属性值"><a href="#二、static属性值" class="headerlink" title="二、static属性值"></a>二、static属性值</h2><p><code>static</code>是<code>position</code>属性的默认值。如果省略<code>position</code>属性，浏览器就认为该元素是<code>static</code>定位。<br><strong>注意：<code>static</code>定位所导致的元素位置，是浏览器自主决定的，所以这时<code>top</code>、<code>bootom</code>、<code>left</code>、<code>right</code>这四个属性无效。</strong></p>
-<h2 id="三、relative，absolute，fixed"><a href="#三、relative，absolute，fixed" class="headerlink" title="三、relative，absolute，fixed"></a>三、relative，absolute，fixed</h2><p><code>relative</code>、<code>absolute</code>、<code>fixed</code>这三个属性值有一个共同点，都是对于某个基点的定位，不同之处仅仅在于基点不同。所以，只要理解了它们的基点是什么，就很容易掌握这三个属性值。<br>这三种定位都不会对其他元素位置产生影响，因此元素之间可能 产生重叠。</p>
-<h3 id="3-1-relative属性值"><a href="#3-1-relative属性值" class="headerlink" title="3.1 relative属性值"></a>3.1 relative属性值</h3><p><code>relative</code>表示，相对于默认位置（即<code>static</code>时的位置）进行偏移，即定位基点是元素的默认位置。<br>它必须搭配<code>top</code>、<code>bottom</code>、<code>left</code>、<code>right</code>这四个属性一起使用，用来指定偏移的方向和距离。</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
-        <span class="token selector"><span class="token class">.a</span></span><span class="token punctuation">{</span>
-            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">60</span>px<span class="token punctuation">;</span>
-            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">60</span>px<span class="token punctuation">;</span>
-            <span class="token property">background-color</span><span class="token punctuation">:</span> aqua<span class="token punctuation">;</span>
-            <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token selector"><span class="token class">.b</span></span><span class="token punctuation">{</span>
-            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">60</span>px<span class="token punctuation">;</span>
-            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">60</span>px<span class="token punctuation">;</span>
-            <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span><span class="token number">47</span>, <span class="token number">47</span>, <span class="token number">196</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
-            <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
-            <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">30</span>px<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token selector"><span class="token class">.c</span></span><span class="token punctuation">{</span>
-            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">60</span>px<span class="token punctuation">;</span>
-            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">60</span>px<span class="token punctuation">;</span>
-            <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
-            <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>a<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>a<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>b<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>b<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>c<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>c<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></code></pre>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/510079/1608296918973-8fe5a7c1-e325-492f-85a2-e981336508f3.png#align=left&display=inline&height=163&margin=%5Bobject%20Object%5D&name=image.png&originHeight=325&originWidth=546&size=26548&status=done&style=none&width=273" alt="image.png"><br>上面代码中，<code>div</code>元素从默认位置向下偏移<code>30px</code>(即距离顶部<code>30px</code>)。</p>
-<h3 id="3-2-absolute属性值"><a href="#3-2-absolute属性值" class="headerlink" title="3.2 absolute属性值"></a>3.2 absolute属性值</h3><p><code>absolute</code>表示，相对于上级元素（一般是父级元素）进行偏移，即定位基点是父元素。<br>它有一个重要的限制条件：定位基点（一般是父级元素）不能是<code>static</code>定位，否则定位基点就会变成整个网页的根元素<code>html</code>。另外，<code>absolute</code>定位也必须搭配<code>top</code>、<code>bottom</code>、<code>left</code>、<code>right</code>这四个属性一起使用。</p>
-<pre class=" language-html"><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
-        <span class="token selector"><span class="token class">.father</span></span><span class="token punctuation">{</span>
-            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
-            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
-            <span class="token property">background-color</span><span class="token punctuation">:</span> aqua<span class="token punctuation">;</span>
-            <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token selector"><span class="token class">.son</span></span><span class="token punctuation">{</span>
-            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">60</span>px<span class="token punctuation">;</span>
-            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">60</span>px<span class="token punctuation">;</span>
-            <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span><span class="token number">47</span>, <span class="token number">47</span>, <span class="token number">196</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
-            <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">40</span>px<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>father<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>son<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>son<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></code></pre>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/510079/1608296878970-7d3785a1-9c44-4709-a3f5-157b0afdfad6.png#align=left&display=inline&height=156&margin=%5Bobject%20Object%5D&name=image.png&originHeight=450&originWidth=722&size=30724&status=done&style=none&width=250" alt="image.png"><br>上面代码中，父元素是<code>relative</code>定位，子元素是<code>absolute</code>定位，所以子元素的定位基点是父元素，相对于父元素的顶部向下偏移<code>40px</code>。如果父元素是<code>static</code>定位，上例的子元素就是距离网页的顶部向下偏移<code>40px</code>。<br><strong>注意，<code>absolute</code>定位的元素会被“正常页面流”忽略，即在“正常页面流”中，该元素所占空间为零，周边元素不受影响。</strong></p>
-<h3 id="3-3-fixed-属性值"><a href="#3-3-fixed-属性值" class="headerlink" title="3.3 fixed 属性值"></a>3.3 fixed 属性值</h3><p><code>fixed</code>表示，相对于视口（浏览器窗口）进行偏移，即定位基点是浏览器窗口。这会导致元素的位置不随页面滚动而变化，好像固定在网页上一样。<br>它如果搭配<code>top</code>，<code>bottom</code>，<code>left</code>,<code>right</code>这四个属性一起使用，表示元素的初始位置是基于视口计算的，否则初始位置就是元素的默认位置。</p>
-<h2 id="四、sticky-属性值"><a href="#四、sticky-属性值" class="headerlink" title="四、sticky 属性值"></a>四、sticky 属性值</h2><p><code>sticky</code>跟前面四个属性值都不一样，它会产生动态效果，很像<code>relative</code>和<code>fixed</code>的结合：一些时候是<code>relative</code>定位（定位基点是自身默认位置），另一些时候自动变成<code>fixed</code>定位（定位基点是视口）。<br>因此，它能够形成“动态固定”的效果。比如，网页的搜索工具栏，初始加载时在自己的默认位置（<code>relative</code>定位）。<br>页面向下滚动时，工具栏变成固定位置，始终停留在页面头部（<code>fixed</code>定位）。<br>等到页面重新向上滚动回到原位，工具栏也会回到默认位置。<br><code>sticky</code>生效的前提是，必须搭配<code>top</code>,<code>bootom</code>,<code>left</code>,<code>right</code>这四个属性一起使用，不能省略，否则等同于<code>relative</code>定位，不产生‘动态固定’的效果。原因是这四个属性用来定义‘偏移距离’，浏览器把它当做<code>sticky</code>的生效门槛。<br>它的具体规则是，当页面滚动，父元素开始脱离视口时（即部分完全不可见），<code>fixed</code>定位自动切换回<code>relative</code>定位。<br>请看一下示例代码。（<strong>注意：除了已被淘汰的IE以外，其他浏览器目前都支持<code>sticky</code>。但是，Safari浏览器需要加上浏览器前缀<code>-webkit-</code>。</strong>）</p>
-<pre class=" language-html"><code class="language-html">#toolbar{
-    position:-webkit-sticky;/*safari浏览器*/
-    position:sticky;       /*其他浏览器*/
-    top:20px;
-}</code></pre>
-<p>上面代码中，页面向下滚动时，<code>#toolbar</code>的父元素开始脱离视口，一旦视口的顶部与<code>#toolbar</code>的距离小于<code>20px</code>(门槛值），<code>#toolbar</code>就会自动变成<code>fixed</code>定位，保持与视口顶部20px的距离。页面会继续向下滚动，父元素彻底离开视口（即整个父元素完全不可见），<code>#toolbar</code>恢复成<code>relative</code>定位。</p>
-<h2 id="五、sticky-的应用"><a href="#五、sticky-的应用" class="headerlink" title="五、sticky 的应用"></a>五、sticky 的应用</h2><p><code>sticky</code>定位可以实现一些很有用的效果。除了上面提到“动态固定”效果，还有以下用法。</p>
-<h3 id="5-1-堆叠效果"><a href="#5-1-堆叠效果" class="headerlink" title="5.1 堆叠效果"></a>5.1 堆叠效果</h3><p>堆叠效果（stacking）指的是页面滚动时，下方的元素覆盖上方的元素。下面是一个图片堆叠的例子，下方的图片会随着页面滚动，覆盖上方图片<br>Html代码：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pic1.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pic2.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pic3.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<p>css代码：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector">div</span><span class="token punctuation">{</span>
-    <span class="token property">position</span><span class="token punctuation">:</span>sticky<span class="token punctuation">;</span>
-    <span class="token property">top</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="5-2-表格的表头锁定"><a href="#5-2-表格的表头锁定" class="headerlink" title="5.2 表格的表头锁定"></a>5.2 表格的表头锁定</h3><p>Html代码：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>名字<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>颜色r<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Bob<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Yellow<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Michelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>Purple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span></code></pre>
-<p>css代码：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector">th </span><span class="token punctuation">{</span>
-  <span class="token property">position</span><span class="token punctuation">:</span> sticky<span class="token punctuation">;</span>
-  <span class="token property">background-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
-  <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>需要注意的是，<code>sticky</code>必须设在<code>&lt;th&gt;</code>元素上面，不能设在<code>&lt;thead&gt;</code>和<code>&lt;tr&gt;</code>元素，因为这两个元素没有<code>reltive</code>定位，也就无法产生<code>sticky</code>效果。</p>
-<p>（end）</p>
+<ol>
+<li><p>八进制字面量在严格模式下无效，会导致支持该模式的js引擎抛出异常</p>
+</li>
+<li><p>十六进制字面量的前两位必须是0x，后根任何十六进制数字（0-9及A-F）</p>
+</li>
+<li><p>在进行算术计算时，所有以八进制和十六进制表示的数值最终将被转换成十进制数值</p>
+<h3 id="2-浮点数注意点"><a href="#2-浮点数注意点" class="headerlink" title="2.浮点数注意点"></a>2.浮点数注意点</h3><p>浮点数值的最高精度是17位小数，但在进行算术计算时精度远远不如整数。例如</p>
+</li>
+<li><p>1 + 0.2 === 0.300000000000004(大致这个意思，具体多少个零请实际计算)<br>所以永远不要测试某个特定的浮点数值</p>
+<h3 id="3-数值"><a href="#3-数值" class="headerlink" title="3.数值"></a>3.数值</h3></li>
+<li><p>使用isFinite(num)来确定一个数字是否有穷</p>
+</li>
+<li><p>ECMAScript能够表示的最小值保存在变量 Number.MIN_VALUE 中，最大值保存在 Number.MAX_VALUE 中。</p>
+</li>
+<li><p>NaN表示非数值。在ECMAScript中，任何数值除以非数值会返回NaN,因此不会影响其他代码的执行。</p>
+</li>
+<li><p>isNaN()用来确定传入的参数是否为”非数值”。会对参数进行转化，不能被转化为数值的则返回true。</p>
+<h3 id="4-数值转换"><a href="#4-数值转换" class="headerlink" title="4.数值转换"></a>4.数值转换</h3><p>parseFloat主要用于解析有效的浮点数字，始终会忽略前导的零，可识别所有的浮点数格式，但是十六进制格式的字符串始终会被转换成零。</p>
+<h1 id="二-字符串"><a href="#二-字符串" class="headerlink" title="二. 字符串"></a>二. 字符串</h1><h3 id="1-toString-转换为字符串"><a href="#1-toString-转换为字符串" class="headerlink" title="1. toString() 转换为字符串"></a>1. toString() 转换为字符串</h3><pre><code>let num = 10;
+num.toString(n) n表示进制，可选，如2，8，10，16</code></pre>
+<h1 id="三-循环"><a href="#三-循环" class="headerlink" title="三.循环"></a>三.循环</h1><h3 id="1-break和continue"><a href="#1-break和continue" class="headerlink" title="1. break和continue"></a>1. break和continue</h3></li>
+</ol>
+<ul>
+<li>break语句会立即退出循环，强制执行循环后面的语句</li>
+<li>continue语句是退出当前循环，继续执行下一循环<pre><code>// 结合label,更精确的控制循环
+outerMost:
+for(var i=0;i&lt;10;i++)&#123;
+  for(var j=0;i&lt;10;j++)&#123;
+      if(i = 5)&#123;
+          break outerMost
+      &#125;
+  &#125;
+&#125;
+//此时直接退出外部循环，continue也是类似</code></pre>
+<h3 id="2-switch语句在比较值时使用的是全等操作符，所以不会发生类型转换"><a href="#2-switch语句在比较值时使用的是全等操作符，所以不会发生类型转换" class="headerlink" title="2. switch语句在比较值时使用的是全等操作符，所以不会发生类型转换"></a>2. switch语句在比较值时使用的是全等操作符，所以不会发生类型转换</h3><h3 id="3-函数参数arguments和命名参数"><a href="#3-函数参数arguments和命名参数" class="headerlink" title="3. 函数参数arguments和命名参数"></a>3. 函数参数arguments和命名参数</h3><pre><code>function add(n1, n2)&#123;
+  arguments[1] = 10;
+&#125;</code></pre>
+此时读取n2和arguments[1]并不会访问相同的内存空间，他们的内存空间是独立的，但他们的值保持同步<h1 id="四-变量，作用域和内存问题"><a href="#四-变量，作用域和内存问题" class="headerlink" title="四.变量，作用域和内存问题"></a>四.变量，作用域和内存问题</h1><h3 id="1-传递参数"><a href="#1-传递参数" class="headerlink" title="1.传递参数"></a>1.传递参数</h3></li>
+</ul>
+<p>1.所有的参数都是按值传递的。在向参数传递引用类型的值时，会把这个值在内存中的地址复制给一个局部变量，因此这个局部变量的变化会反应在函数外部<br>2.当在函数内部重写obj时，这个变量引用的就是一个局部对象。而这个局部对象会在函数执行完毕后立即被销毁。</p>
+<h3 id="2-垃圾收集"><a href="#2-垃圾收集" class="headerlink" title="2.垃圾收集"></a>2.垃圾收集</h3><ol>
+<li><p>js最常用的垃圾收集机制为“标记清除”，另一种不常用的是“引用计数”。</p>
+</li>
+<li><p>原理：找出不再继续使用的变量，然后释放其内存空间。垃圾收集器会在固定的时间间隔周期性的执行这一操作。</p>
+</li>
+</ol>
+<h3 id="3-管理内存"><a href="#3-管理内存" class="headerlink" title="3.管理内存"></a>3.管理内存</h3><p>解除引用：数据不再有用，将其值设置为null</p>
+<h1 id="五-引用类型"><a href="#五-引用类型" class="headerlink" title="五.引用类型"></a>五.引用类型</h1><h3 id="1-数组总结"><a href="#1-数组总结" class="headerlink" title="1.数组总结"></a>1.数组总结</h3><pre><code>// 检测数值ES5方法
+Array.isArray(value)  // 检测值是否为数组
+// 转换方法
+toString() 将数组转化为以逗号分隔的字符串
+valueOf() 返回的还是数组
+// 栈方法
+push() 可以接收任意数量的参数，把他们逐个添加到数组的末尾，返回修改后数组的长度
+pop() 从数组末尾移除最后一项，返回移除的项
+// 队列方法
+shift() 移除数组的第一项并返回该项
+unshift() 向数组前端添加任意个项并返回新数组的长度
+// 排序
+sort(compare)
+compare函数接收两个参数,如果返回负数，则第一个参数位于第二个参数前面；如果返回零，则两个参数相等；如果返回正数，第一个参数位于第二个参数后面
+// 降序，升序相反
+(a,b) =&gt; (b-a)
+// 操作方法
+concat(数组 | 一个或多个元素) // 合并数组，返回新数组
+slice(起始位置 ，[结束位置]) // 切分数组，返回新数组，新数组不包含结束位置的项
+splice(起始位置，删除的个数，[插入的元素]) // 删除|插入|替换数组，返回删除的元素组成的数组，会修改原数组
+// 位置方法
+indexOf(查找的项，[查找起点位置]) // 使用全等操作符，严格相等
+lastIndexOf()
+// 迭代方法，都接收两个参数，一个是要在每一项上运行的函数，一个是作用域（可选）
+1.every 对数组中每一项运行给定函数，如果函数对每一项都返回true,则返回true
+        every(fn(value,index,array)&#123;return ...&#125;,[this])
+2.some 对数组中每一项运行给定函数，如果函数对任一项都返回true,则返回true
+3.filter 对数组中每一项运行给定函数，返回该函数会返回true的项组成的数组
+4.forEach 对数组每一项运行给定函数，无返回值
+5.map 对数组每一项运行给定函数，返回每次函数调用返回结果组成的数组
+// 归并方法 reduce和reduceRight(和前者遍历的方向相反),构建一个最终返回的值
+reduce(fn(prev,cur,index,array)&#123; return ... &#125;,initValue)
+1.fn返回的值会作为第一个参数传递给下一项
+2.initValue做为归并基础的初始值</code></pre>
+<h3 id="2-Date对象"><a href="#2-Date对象" class="headerlink" title="2.Date对象"></a>2.Date对象</h3><ol>
+<li><p>new Date(str | year,month,day,…) 可以接收日期格式的字符串，也可以是year, month, day参数的数字</p>
+</li>
+<li><p>Date.now() 返回调用这个方法的日期时间的毫秒数，使用 +new Date()也可以得到相同的效果</p>
+<h3 id="3-RegExp对象"><a href="#3-RegExp对象" class="headerlink" title="3.RegExp对象"></a>3.RegExp对象</h3></li>
+<li><p>由于RegExp构造函数的模式参数是字符串，所以在某些情况下要进行双重转义，对于\n双重转义为\n</p>
+</li>
+<li><p>使用正则字面量时会共享一个RegExp实例，而正则构造函数会为每次调用创建一个新的regExp实例</p>
+</li>
+<li><p>RegExp实例属性</p>
+</li>
+</ol>
+<ul>
+<li>global / ignoreCase(忽略大小写)</li>
+<li>lastIndex(表示开始搜索下一个匹配项的字符位置，从零开始)</li>
+<li>source(正则表达式的字符串表示)</li>
+</ul>
+<ol start="4">
+<li>实例方法</li>
+</ol>
+<ul>
+<li>.exec(text) text为要应用模式的字符串，返回包含第一个匹配项信息的数组。<br>返回值分析: 返回值是数组的实例，但包含两个额外的属性：index(表示匹配项在字符串中的位置)，input表示应用正则表达式的字符串<pre><code>let text = &quot;xd ff gggg&quot;;
+let pattern = /xd ((ff) gggg)?/g;
+let matches = pattern.exec(text); //每次调用都返回一个匹配项，即使是全局模式
+matches[0] //与整个模式匹配的字符串
+matches[1] // 除了第一项以外，其他项为与模式中捕获组匹配的字符串</code></pre>
+</li>
+</ul>
+<ol start="5">
+<li><p>test(text) 接收一个字符串参数，在模式与该参数匹配是返回true</p>
+<pre><code>// RegExp构造函数属性
+leftContext | $`(短属性名)  // 匹配项左部文本
+rightContext | $&#39;(短属性名)  // 匹配项右部文本
+// 案例
+if(pattern.test(text))&#123;
+ console.log(RegExp.leftContext)  // 或
+ console.log(RegExp[&quot;$`&quot;])
+&#125;
+// 用于获取捕获组
+RegExp.$1, RegExp.$2, RegExp.$3</code></pre>
+<h3 id="4-函数"><a href="#4-函数" class="headerlink" title="4.函数"></a>4.函数</h3></li>
+<li><p>函数内部属性<br>arguments对象有一个名叫callee的属性，该属性是一个指针，指向拥有这个arguments对象的函数<br>arguments.callee(arg) //调用函数自身，在严格模式下运行时会导致错误</p>
+</li>
+<li><p>函数属性<br>length 表示函数希望接收的命名参数的个数<br>prototype 保存所有实例方法</p>
+</li>
+<li><p>函数方法</p>
+</li>
+</ol>
+<pre><code>apply() // 接收两个参数，一个是作用域，另一个是参数数组
+call() // 第一个参数是作用域， 剩下的参数是函数需要接收的参数，需要一一列出
+bind() // 该方法会创 建一个函数的实例，其this值会被绑定到传给bind()函数的值 IE9+支持
+valueOf() / toString() // 返回函数的代码</code></pre>
+<h3 id="5-基本包装类型"><a href="#5-基本包装类型" class="headerlink" title="5.基本包装类型"></a>5.基本包装类型</h3><ol>
+<li><p>Number</p>
+<pre><code>toFixed(n) // 按照指定的小数位返回数值的字符串表示（可以自动四舍五入）</code></pre>
+</li>
+<li><p>String<br>```<br>charAt(n) // 返回给定位置的字符<br>charCodeAt(n) // 返回给定位置的字符编码<br>“dddd”[n] // 访问字符串特定索引的字符<br>concat() //用于将一个或多个字符串拼接起来<br>slice(start, end) / substring(start, end)  // 返回一个新的从开始位置到结束位置的字符串，不包括结束位置<br>substr(start, len) // 返回一个新的从开始位置到指定长度的字符串<br>indexOf(str,[startIndex]) // 返回指定字符在字符串中的索引，第二个参数为从指定位置开始搜索，可选<br>trim() // 该方法会创建一个字符串的副本，删除前置与后缀的所有空格，返回结果<br>toLowerCase() / toUpperCase() // 小写大写转换<br>// 字符串的模式匹配方法</p>
+</li>
+<li><p>match(pattern) //本质上与RegExp的exec()方法相同，只接受一个参数，即正则表达式或RegExp对象</p>
+</li>
+<li><p>search(pattern) // 参数与match参数相同，返回字符串中第一个匹配项的索引</p>
+</li>
+<li><p>replace(str | pattern, text | fn)  //第一个参数为想要被替换的字符串或正则表达式，第二个参数为要替换的字符串或一个函数</p>
+</li>
+</ol>
+<ul>
+<li>如果第二个参数是字符串，可以使用一些特殊的字符序列，将正则表达式操作得到的值插入到结果字符串中。<br>  $’ //匹配的子字符串之后的子字符串<br>  $` //匹配的子字符串之前的子字符串<br>  $n //匹配第n个捕获组的子字符串</li>
+<li>如果第二个参数是函数，在只有一个匹配项时，会向函数传递3个参数，模式的匹配项，模式的匹配项在字符串中的位置，原始的字符串<pre><code>              正则表达式中定义了多个捕获组的情况下，传递的参数依次是模式的匹配项，第一个捕获组的匹配项，第二个捕获组的匹配项...，最后两个参数和上者相同</code></pre>
+如：<br>function htmlEscape(text){<br>  return text.replace(/[&lt;&gt;&amp;”]/g, (match, pos, originalText) =&gt; {<pre><code>  switch(match)&#123;
+      case &quot;&lt;&quot;:
+          return &quot;&amp;lt;&quot;;
+      case &quot;&gt;&quot;:
+          return &quot;&amp;gt;&quot;;
+      case &quot;&amp;&quot;:
+          return &quot;&amp;amp;&quot;;
+      case &quot;\&quot;&quot;:
+          return &quot;&amp;quot;&quot;
+  &#125;</code></pre>
+  })<br>}</li>
+</ul>
+<p>4.split() // 第一个参数是需要指定分隔符匹配中的字符串或者正则表达式，也可以传递第二个参数，用来限制返回数组的长度<br>例：<br>let text = “xujaing,red,ddd”;<br>text.split(“,”)  // [“xujaing”, “red”, “ddd”]<br>text.split(“,”, 2)  // [“xujaing”, “red”]<br>text.split(/[^,]+/)  //*** 匹配非字母，用字符串的非字母分割字符串，返回数组</p>
+<ul>
+<li>5.localeCompare() // 比较两个字符串，如果字符串在字母表中排在字符串参数之前，返回负数，相等返回0，反之正数<pre><code></code></pre>
+</li>
+</ul>
+<ol start="3">
+<li>单体内置对象<br>```html<br>Global对象</li>
+<li>URI编码方法<br>  encodeURI()           // 除了空格之外其他字符都不编码<br>  encodeURIComponent()  //会对它发现的任何非标准字符进行编码<br>  decodeURI()           //只能对使用encodeURI的字符进行解码<br>  decodeURIComponent()  // 原理同上</li>
+</ol>
+<p>Math对象<br>1.Math.max() / Math.min() // 接收任意多数值作为参数<br>// 求数组中最大值 Math.max.apply(Math, arrValue)<br>2.Math.ceil() / Math.floor() / Math.round()  //向上/下/四舍五入<br>3.Math.random()  //返回大于等于0小于1的随机数<br>4.Math.abs() //返回参数的绝对值<br>5.Math.pow(num,power) // 返回num的power次幂<br>6.Math.sqrt(num) // 返回num的平方根</p>
+<pre><code># 六.面向对象的程序设计
+### 1.属性类型
+```html
+// 1.数据属性
+    let person = &#123;&#125;;
+    Object.defineProperty(person, &quot;name&quot;, &#123;
+        configurable: true,  //表示能否通过delete删除属性从而重新定义属性，能否修改属性
+        enumerable: true,  //表示能否通过for-in循环返回属性
+        writable: true,  // 表示是否能修改属性的值
+        value: &quot;xujiang&quot; // 属性的值
+    &#125;)
+    /* 在调用Object.defineProperty()方法创建一个新属性时，如不指定前三个属性字段，默认值都为false, 如果是修改已定义的属性时，则没有此限制 */
+// 2.访问器属性get/set
+    let person = &#123;name: &quot;xujaijgn&quot;, year: 11&#125;;
+        Object.defineProperty(person, &quot;_name&quot;, &#123;
+            get: function()&#123;
+                return this.name
+            &#125;,
+            // 定义Set时，则设置一个属性的值时会导致其他属性发生变化
+            set: function(newValue)&#123;
+                this.name = newValue;
+                this.year = 12;
+            &#125;
+        &#125;)
+// 定义多个属性
+Object。defineProperties(book, &#123;
+    _year: &#123;
+        writable: false,
+        value: 2001
+    &#125;,
+    year: &#123;
+        get: function()&#123;
+            return _year
+        &#125;,
+        set: function(newValue)&#123;
+            this._year = newValue;
+        &#125;
+    &#125;
+&#125;)</code></pre>
+<h3 id="2-创建对象"><a href="#2-创建对象" class="headerlink" title="2.创建对象"></a>2.创建对象</h3><pre><code>1.工厂模式---返回新对象的方式
+2.构造函数---定义函数，通过new操作符创建对象（任何函数通过new操作符调用都可以看作构造函数）
+   缺点：每个方法在实例中都要重新创建一遍
+3.原型模式 （book.prototype.name = &quot;aaa&quot;)
+    优点：可以让每个实例对象共享它所包含的方法
+    缺点： 属性共享，对于引用类型值的属性，实例会共享属性
+    理解原型：
+        1.isPrototypeOf() // 确定对象之间是否存在原型关系
+        2.Object.getPrototypeOf(object1) // 获取实例对象的原型
+        3.我们可以通过对象实例访问保存在原型中的值，但却不能通过对象实例重写原型中的值，如果该实例有与原型相同的属   性名，则会屏蔽原型中的属性
+        4.hasOwnProperty(name) // 检测一个属性是否在实例中
+        5.原型与in操作符 &quot;name&quot; in person  // 对象能访问到给定属性时返回true
+        6.Object.keys(obj) // 返回一个包含所有可枚举属性的字符串数组（实例属性）
+        7.Object.getOwnPropertyNames() //获取所有实例属性，包括不可美枚举的
+        8.实例中的指针只指向原型，而不指向构造函数
+        9.重写原型对象会切断现有原型与之前存在的对象实例之间的联系，他们引用的任然是最初的原型
+4.组合式（构造函数模式和原型模式）
+    1.用构造函数定义实例属性，用原型定义方法和共享属性
+5.动态原型模式（通过检查某个应该存在的方法是否存在，来决定需要初始化原型
+6.稳妥构造函数模式（适合在某些安全环境下工作）
+    function Person(name,year,job)&#123;
+        var o = new Object();
+        // 这里可以添加私有变量和方法
+        o.sayName = () =&gt; name
+        return o
+    &#125;</code></pre>
+<h3 id="3-继承（原型链是实现继承的主要方式）"><a href="#3-继承（原型链是实现继承的主要方式）" class="headerlink" title="3.继承（原型链是实现继承的主要方式）"></a>3.继承（原型链是实现继承的主要方式）</h3><pre><code>1.原型链的问题
+    1.包含引用类型值的原型属性会被所有实例共享，在通过原型实现继承时，原型实际上会变成另一个类型的实例，原先的实例属性变成了现在的原型属性。
+    2.在创建子类型的实例时，无法向父类构造函数传递参数
+2.借用构造函数（在子类型构造函数的内部调用父类构造函数）
+    //此时实例不会共享属性
+    function Parent(name)&#123;
+        this.colors = [1,3,4];
+        this.name = name;
+    &#125;
+    function Child(name)&#123;
+        Parent.call(this, name);
+        this.age = 12;
+    &#125;
+    // 存在的问题： 1.函数无法复用 2.父类的原型对于子类是不可见的
+3.组合继承（使用原型链继承原型属性和方法，使用借用构造继承实例属性） ---最常用的继承模式
+    缺点：无论如何都会调用两次父类构造函数
+    // 父类
+    function Parent(name)&#123;
+        this.name = &quot;xujaing&quot;;
+        this.age = 12;
+    &#125;;
+    Parent.prototype.say = function() &#123; console.log(this.age) &#125;;
+    // 子类继承父类
+    function Child(name)&#123;
+        Parent.call(this, name);
+        this.age = 13;
+    &#125;
+    Child.prototype = new Parent();
+    Child.prototype.constructor = Child;
+    Child.prototype.say = function() &#123; alert(this.age) &#125;;
+4.原型式继承
+    实现1.
+        function object(o)&#123;
+            function F()&#123;&#125;;
+            F.prototype = o;
+            return new F()
+        &#125;
+    实现2.通过Object.create(prototype, properties) // 第一个参数为创建新对象原型的对象，第二个参数为对新对象定义额外属性的对象（和defineProperties方法的第二个参数格式相同）
+    Object.create(person, &#123;
+        name: &#123;
+            value: &quot;xujiang&quot;
+        &#125;
+    &#125;)
+5.寄生组合式继承（通过借用构造函数继承属性，通过原型链混成的方式继承方法）---最理想的继承范式
+    function inheritPrototype(sub,sup)&#123;
+        let prototype = Object.create(sup.prototype);
+        prototype.constructor = sub;
+        sub.prototype = prototype;
+    &#125;
+    function Sup()&#123;&#125;
+    Sup.prototype.say = function()&#123;&#125;
+    function Sub(arg)&#123;
+        // 关键
+        Sup.call(this,arg);
+    &#125;
+    // 关键
+    inheritPrototype(Sub, Sup);</code></pre>
+<h1 id="七-函数表达式"><a href="#七-函数表达式" class="headerlink" title="七.函数表达式"></a>七.函数表达式</h1><h3 id="闭包与变量"><a href="#闭包与变量" class="headerlink" title="闭包与变量"></a>闭包与变量</h3><ol>
+<li><p>闭包只能取得包含函数中任何变量的最后一个值</p>
+<pre><code>解决方案
+ function createFunction()&#123;
+     let arr = [];
+     for(let i=0; i&lt; 10; i++)&#123;
+         arr[i] = function(num)&#123;
+             return num
+         &#125;(i)
+     &#125;
+     return arr
+ &#125;</code></pre>
+<h3 id="this对象"><a href="#this对象" class="headerlink" title="this对象"></a>this对象</h3></li>
+<li><p>在全局函数中，this等于window,而当函数被当作某个对象的方法调用时，this等于那个对象。不过，匿名函数的执行环境具有全局性，因此其this对象通常指向window</p>
+</li>
+<li><p>(object.say = object.say)() 此时函数内部this指向window,因为该赋值表达式的值是函数本身，所以this的值不能得到维持</p>
+</li>
+</ol>
+<h3 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h3><ul>
+<li><p>1.如果闭包的作用域链中保存着一个html元素，那就意味着该元素永远无法销毁。</p>
+</li>
+<li><p>2.闭包会引用包含函数的整个活动对象，而其中包含着html,因此有必要把其设置为null</p>
+<pre><code>function a()&#123;
+  let el = $(&quot;#el&quot;);
+  let id = el.id;
+  el.click(function()&#123;
+      alert(id)
+  &#125;)
+  // 清空dom,释放内存
+  el = null;
+&#125;</code></pre>
+<h1 id="八-BOM对象"><a href="#八-BOM对象" class="headerlink" title="八.BOM对象"></a>八.BOM对象</h1><h3 id="1-window"><a href="#1-window" class="headerlink" title="1.window"></a>1.window</h3></li>
+<li><p>BOM的核心对象是window,他表示浏览器的一个实例。</p>
+</li>
+<li><p>全局变量不能通过delete操作符删除,而直接定义在window对象上的属性可以删除</p>
+<h3 id="2-窗口位相关属性"><a href="#2-窗口位相关属性" class="headerlink" title="2.窗口位相关属性"></a>2.窗口位相关属性</h3><p>窗口位置(不同浏览器实现不一样，所以位置获取的不精确和统一)</p>
+<pre><code>let leftPos = (typeof window.screenLeft == &quot;number&quot;) ? window.screenLeft : window.screenX;
+let top = (typeof window.screenTop == &quot;number&quot;) ? window.screenTop : window.screenY;
+// 获取页面视口
+let pageWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;</code></pre>
+<h3 id="3-系统对话框"><a href="#3-系统对话框" class="headerlink" title="3.系统对话框"></a>3.系统对话框</h3><pre><code>// 显示打印对话框
+window.print()</code></pre>
+<h3 id="4-location对象"><a href="#4-location对象" class="headerlink" title="4.location对象"></a>4.location对象</h3><p>```<br>// location即是window对象的属性也是document对象的属性</p>
+</li>
+</ul>
+<ol>
+<li>hash // “#contents” 返回url的hash,如果不包含返回空</li>
+<li>host // “<a href="http://www.wrox.com:80&quot;">www.wrox.com:80&quot;</a> 返回服务器名称和和端口号</li>
+<li>hostname // “<a target="_blank" rel="noopener" href="http://www.wrox.com&quot;/">www.wrox.com&quot;</a> 返回不带端口号的服务器名称</li>
+<li>href // 返回当前加载页面的完整url</li>
+<li>pathname // “/a/“ 返回url中的目录或文件名</li>
+<li>port // “8080” 返回url中指定的端口号</li>
+<li>protocol // “http” 返回页面使用的协议</li>
+<li>search // “?q=java” 返回url中查询字符串，以问号开头<br>// 获取查询字符串<br>function queryObj(){<br> let qs = (location.search.length &gt; 0 ? location.search.substring(1) : ‘’),<br> arg = {},<br> items = qs.length ? qs.split(‘&amp;’) : [],<br> item = null,<br> name = null,<br> value = null,<br> i = 0,<br> len = items.length;<br> for(i;i&lt;len;i++){<pre><code> item = items[i].split(&#39;=&#39;);
+ name = decodeURIComponent(item[0]);
+ value = decodeURIComponent(item[1]);
+ if(name.length)&#123;
+     arg[name] = value;
+ &#125;</code></pre>
+ }<br> return args<br>}<br>// 位置操作</li>
+<li>location.assign(url)  //打开新链接，并在浏览器历史记录里生成一条记录</li>
+<li>location.href = url;  //打开新链接，并在浏览器历史记录里生成一条记录</li>
+<li>location.hash = “#detail” // 在url后添加hash</li>
+<li>location.hostname = “<a target="_blank" rel="noopener" href="http://www.baidu.com&quot;/">www.baidu.com&quot;</a> //修改服务器名称</li>
+<li>location.pathname = “home” //修改路径</li>
+<li>location.port = 8080; // 修改端口号</li>
+</ol>
+<p>***通过以上方法修改url后会在浏览器历史中生成一条记录，用户点击后退可以导航到前一个页面。<br>7.location.replace(url) // 此方式不会在浏览器中生成新记录，用户不能回到前一个页面<br>8.location.reload([true]) // 页面会以最有效的方式重新加载（有可能从缓存中加载），如果参数为true，则将从服务器中加载</p>
+<pre><code>### 5.navigator对象</code></pre>
+<p>navigator.language // “zh-CN” 浏览器的主语言<br>navigator.appName  // “Netscape” 完整的浏览器名称<br>navigator.appVersion // 浏览器的版本<br>// 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36<br>navigator.cookieEnabled // true 表示cookie是否启用<br>navigator.javaEnabled() // 表示浏览器是否启用java<br>navigator.onLine // true 表示浏览器是否连接到了因特网<br>navigator.platform // “Win32” 浏览器所在的系统平台<br>navigator.userAgent // 浏览器用户代理字符串<br>// “Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36”<br>navigator.plugins // 检测浏览器中安装的插件的数组</p>
+<pre><code>### 6.history对象</code></pre>
+<ol>
+<li>history.go(0 | [123] | -1 | str) // 如果是Str,则会跳转到历史记录中包含该字符串的第一个位置</li>
+<li>history.back() //后退一页</li>
+<li>history.forward() //前进一页</li>
+<li>history.length // 保存着历史纪录的数量<pre><code># 九.客户端检查
+### 1.检查用户代理</code></pre>
+let client = function() {<br> //呈现引擎<br> let engine = {<pre><code> ie: 0,
+ gecko: 0,
+ webkit: 0,
+ khtml: 0,
+ opera: 0,
+ // 完整版本号
+ ver: null</code></pre>
+ };<br> // 浏览器<br> let browser = {<pre><code> // 主要浏览器
+ ie: 0,
+ firefox: 0,
+ safari: 0,
+ konq: 0,
+ opera: 0,
+ chrome: 0,
+ // 具体版本号
+ ver: null</code></pre>
+ };<br> // 平台/设备/操作系统<br> let system = {<pre><code> win: false,
+ mac: false,
+ x11: false,
+ // 移动设备
+ iphone: false,
+ ipod: false,
+ ipad: false,
+ ios: false,
+ android: false,
+ nokiaN: false,
+ winMobile: false,
+ // 游戏系统
+ wii: false,
+ ps: false</code></pre>
+ };<br> // 检测呈现引擎和浏览器<br> let ua = navigator.userAgent;<br> if (window.opera) {<pre><code> engine.ver = browser.ver = window.opera.version();
+ engine.opera = browser.opera = parseFloat(engine.ver);</code></pre>
+ } else if (/AppleWebKit/(\S+)/.test(ua)) {<pre><code> // \S 匹配一个非空白字符
+ engine.ver = RegExp[&quot;$1&quot;];
+ engine.webkit = parseFloat(engine.ver);
+ // 确定是chrome还是safari
+ if (/Chrome\/(\S+)/.test(ua)) &#123;
+     browser.ver = RegExp[&quot;$1&quot;];
+     browser.chrome = parentFloat(browser.ver);
+ &#125; else if (/Version\/(\S+)/.test(ua)) &#123;
+     browser.ver = RegExp[&quot;$1&quot;];
+     browser.safari = parentFloat(browser.ver);
+ &#125; else &#123;
+     //近似的确定版本号
+     let safariVersion = 1;
+     if (engine.webkit &lt; 100) &#123;
+         let safariVersion = 1;
+     &#125; else if (engine.webkit &lt; 312) &#123;
+       let safariVersion = 1.2;  
+     &#125; else if (engine.webkit &lt; 412) &#123;
+       let safariVersion = 1.3;
+     &#125; else &#123;
+         let safariVersion = 2;
+     &#125;
+     browser.safari = browser.ver = safariVersion;
+ &#125;</code></pre>
+ } else if (/KHTML/(\S+)/.test(ua) || /Konqueror/([^;]+)/.test(ua)) {<pre><code> engine.ver = browser.ver = RegExp[&quot;$1&quot;];
+ engine.khtml = browser.konq = parseFloat(engine.ver);</code></pre>
+ } else if (/rv:([^)]+)) Gecko/\d{8}/.test(ua)) {<pre><code> engine.ver = RegExp[&quot;$1&quot;];
+ engine.gecko = parseFloat(engine.ver);
+ // 确定是不是firefox
+ if (/Firefox\/(\S+)/.test(ua)) &#123;
+     browser.ver = RegExp[&quot;$1&quot;];
+     browser.firefox = parseFloat(browser.ver);
+ &#125;</code></pre>
+ } else if (/MSIE ([^;]+)/.test(ua)) {<pre><code> engine.ver = browser.ver = RegExp[&quot;$1&quot;];
+ engine.ie = browser.ie = parseFloat(engine.ver);</code></pre>
+ }<br> // 检测浏览器<br> browser.ie = engine.ie;<br> browser.opera = engine.opera;<br> // 检测平台<br> let p = navigator.platform;<br> system.win = p.indexOf(“Win”) == 0;<br> system.mac = p.indexOf(“Mac”) == 0;<br> system.x11 = (p == “x11”) || (p.indexOf(“Linux”) == 0);<br> // 检测window操作系统<br> if (system.win) {<pre><code> if (/Win(?:dows)?([^do]&#123;2&#125;)\s?(\d+\.\d+)?/.test(ua)) &#123;
+     if (RegExp[&quot;$1&quot;] == &quot;NT&quot;) &#123;
+         switch(RegExp[&quot;$2&quot;]) &#123;
+             case &quot;5.0&quot;:
+                 break;
+             case &quot;5.1&quot;:
+                 system.win = &quot;XP&quot;;
+                 break;
+             case &quot;6.0&quot;:
+                 system.win = &quot;Vista&quot;;
+                 break;
+             case &quot;6.1&quot;:
+                 system.win = &quot;7&quot;;
+                 break;
+             default:
+                 system.win = &quot;NT&quot;;
+                 break;
+         &#125;
+     &#125; else if (RegExp[&quot;$1&quot;] == &quot;9x&quot;) &#123;
+         system.win = &quot;ME&quot;;
+     &#125; else &#123;
+         system.win = RegExp[&quot;$1&quot;];
+     &#125;
+ &#125;</code></pre>
+ }<br> // 移动设备<br> system.iphone = ua.indexOf(“iPhone”) &gt; -1;<br> system.ipod = ua.indexOf(“iPod”) &gt; -1;<br> system.ipad = ua.indexOf(“ipad”) &gt; -1;<br> system.nokiaN = ua.indexOf(“NokiaN”) &gt; -1;<br> // windows mobile<br> if (system.win == “CE”) {<pre><code> system.winMobile = system.win;</code></pre>
+ } else if (system.win == “Ph”) {<pre><code> if (/Windows Phone OS (\d+.\d+)/.test(ua)) &#123;
+     system.win = &quot;Phone&quot;;
+     system.winMobile = parseFloat(RegExp[&quot;$1&quot;]);
+ &#125;</code></pre>
+ }<br> // 检测ios版本<br> if (system.mac &amp;&amp; ua.indexOf(“Mobile”) &gt; -1) {<pre><code> if (/CPU (?:iphone)?OS (/d+_\d+)/.test(ua)) &#123;
+     system.ios = parseFloat(RegExp.$1.replace(&quot;_&quot;, &quot;.&quot;));
+ &#125; else &#123;
+     system.ios = 2;  //不能正确检测出来，只能猜测
+ &#125;</code></pre>
+ }<br> // 检测android<br> if (/Android (\d+.\d+)/.test(ua)) {<pre><code> system.android = parsentFloat(RegExp.$1);</code></pre>
+ }<br> // 游戏系统<br> system.wii = ua.indexOf(“Wii”) &gt; -1;<br> system.ps = /playstation/i.test(ua);<br> // 返回检测对象<br> return {<pre><code> engine: engine,
+ browser: browser,
+ system: system</code></pre>
+ }<br>}();<pre><code># 十. DOM
+### 1.将NodeList对象转换为数组</code></pre>
+let arrayNodes = Array.prototype.slice.call(someNode.childNodes, 0);<pre><code>### 2.hasChildNodes() —在节点包含一或多个子节点的情况下返回true
+### 3.操作节点</code></pre>
+</li>
+<li>appendChild() //用于向childNodes末尾添加一个节点，返回新增的节点，如果节点已存在，那么就是从原来的位置移动到新位置</li>
+<li>insertBefore() //将节点插入指定位置，接收两个参数，要插入的节点和作为参照的节点，返回插入的节点</li>
+<li>replaceChild() //替换指定节点，接收2个参数，要插入的节点和要替换的节点，返回被移除的节点</li>
+<li>removeChild() //移除节点，返回被移除的节点</li>
+<li>cloneNode([true]) //参数为true,执行深复制，复制节点及整个子节点，为false时复制节点本身。cloneNode不会复制节点的javascript属性，但IE在此存在一个bug,所以建议在复制之前最好先移除事件处理程序<pre><code>### 4.访问节点</code></pre>
+Node.firstChild[lastChild | parentChild | nextSibling | previousSibling]<pre><code>### 5.Document类型</code></pre>
+</li>
+<li>document的节点类型nodeType的值为9；</li>
+<li>document.documentElement // 取得对<html>的引用</li>
+<li>document.body // 取得对body的引用</li>
+<li>document.title // 取得文章标题</li>
+<li>document.title = “xxx” //设置文章标题</li>
+<li>document.URL //取得完整的url</li>
+<li>document.domain //取得域名</li>
+<li>document.referrer //取得来源页面的url<pre><code>### 6.Element类型</code></pre>
+</li>
+<li>nodeType值为：1</li>
+<li>nodeName的值为元素标签名</li>
+<li>tagName // 元素标签名，返回大写值，比较时一般采用 element.tagName.toLowerCase()</li>
+<li>取得元素属性 getAttribute() / setAttribute() / removeAttribute()<br>// 注：自定义属性通过点语法访问时会返回undefined</li>
+<li>attributes // 获取元素的属性集合，访问方法： element.attributes[i].nodeName / element.attributes[i].nodeValue</li>
+<li>创建元素 // document.createElement(“div” | “&lt;div class=&quot;box&quot;&gt;aaa</div>“)</li>
+<li>创建文本子节点 // document.createTextNode(“Hello world”)<pre><code>### 7.DocumentFragment类型</code></pre>
+</li>
+<li>nodeType值为：11</li>
+<li>创建文档片段 document.createDocumentFragment()<br>// let fragment = document.createDocumentFragment()<pre><code># 十一.DOM扩展
+### 1.选择符</code></pre>
+</li>
+</ol>
+<ul>
+<li>querySelector() // 参数为css选择符，返回与该模式匹配的第一个元素，没有找到返回null</li>
+<li>querySelectorAll() // 返回所有匹配的元素，底层实现类似于一组元素的快照<h3 id="2-元素遍历-不包含文本节点和注释"><a href="#2-元素遍历-不包含文本节点和注释" class="headerlink" title="2.元素遍历(不包含文本节点和注释)"></a>2.元素遍历(不包含文本节点和注释)</h3>```<br>// ie9+支持</li>
+</ul>
+<p>1.childElementCount // 返回子元素的个数<br>2.firstElementChild // 指向第一个子元素<br>3.lastElementChild // 指向最后一个子元素<br>4.previousElementSibling // 指向前一个同辈元素<br>5.nextElementSibling // 指向后一个同辈元素</p>
+<pre><code>### 3.与类相关的扩充</code></pre>
+<p>classList<br>    1.classList.length // 返回包含元素的个数<br>    2.classList.remove() //接收一个类名，从列表中删除给定类名<br>    3.classList.toggle() //如果列表中存在给定的值，删除它，否则添加它<br>    4.classList.add() //将给定的字符串添加到列表中，如果已经存在，就不添加<br>    5.classList.contains() //表明列表中是否存在给定的值，存在则返回true,否则返回false</p>
+<pre><code>### 4.焦点管理
+元素获得焦点的方式有： 页面加载，用户输入，在代码中调用focus</code></pre>
+<p>1.document.activeElement //始终会引用dom中获得焦点的元素,文档刚刚加载完成时，保存的是document.body元素的引用，文档加载期间的值为null<br>2.document.hasFocus() //用于确定文档是否获得了焦点，是则返回true</p>
+<pre><code>### 5.HTMLDocument的变化</code></pre>
+<p>readyState属性<br>    1.loading //正在加载文档，可以在onload外使用<br>    2.complete //文档加载完毕。只能在onload内获取<br>// 例子<br>if(document.readyState == “complete”) {<br>    // 执行操作<br>}</p>
+<pre><code>### 6.插入标记</code></pre>
+<p>insertAdjacentHTML()<br>// 1.作为前一个同辈元素被插入<br>el.insertAdjacentHTML(‘beforebegin’, ‘<p>hello world</p>‘);<br>// 2.作为第一个子元素被插入<br>el.insertAdjacentHTML(‘afterbegin’, ‘<p>hello world</p>‘);<br>// 3.作为最后一个子元素被插入<br>el.insertAdjacentHTML(‘beforeend’, ‘<p>hello world</p>‘);<br>// 4.作为后一个同辈元素被插入<br>el.insertAdjacentHTML(‘afterend’, ‘<p>hello world</p>‘);</p>
+<pre><code>### 7.children</code></pre>
+<p>// 获取元素集合，只包含元素节点<br>el.children.length | el.children[i]</p>
+<pre><code>### 8.contains() 判断某个节点是否是另一个节点的后代</code></pre>
+<p>// 例子<br>parentEl.contains(childEl); // 如果childEl是parentEl的后代，则返回true</p>
+<pre><code># 十二.DOM2和DOM3
+### 1.框架的变化</code></pre>
+<p>// 访问内联框架的文档对象,如果内联框架来自不同域或者不同协议，访问该文档时会报错<br>let iframe = document.getElementById(“iframe”);<br>let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;</p>
+<pre><code>### 2.元素大小</code></pre>
+<p>1.偏移量<br>    1.offsetHeight/offsetWidth // 元素宽高，包括滚动条，边框<br>    2.offsetLeft/offsetTop // 元素外边框到包含元素内边框的距离<br>    3.offsetParent //保存着包含元素的引用（具有大小的包含元素的引用）<br>// 获取元素在页面中的偏移量<br>function getElLeft(el){<br>    let actualLeft = el.offsetLeft;<br>    let current = el.offsetParent;<br>    while(current !== null){<br>        actualLeft += current.offsetLeft;<br>        current = current.offsetParent;<br>    }<br>    return actualLeft<br>}<br>// 注： 这些偏移量都是只读的，每次访问都要重新计算，因此最好将其保存到局部变量里，以提高性能<br>2.客户区大小clientWidth/clientHeight（元素内容及内边距所占据的空间）<br>    获取视口大小 clientW = document.body.clientWidth || document.documentElement.clientWidth;<br>3.滚动区大小<br>    1.scrollHeight //在没有滚动条的情况下，元素内容总高度（内容+内边距）<br>    2.scrollWidth<br>    3.scrollLeft //被隐藏在内容区域左侧的像素数<br>    4.scrollTop //被隐藏在内容区域上方的像素数,通过设置该值可以让滚动条滚动到响应位置<br>    *** 确定文档总高度兼容方案<br>    let scrollH = document.documentElement.scrollHeight || document.body.scrollHeight;<br>    let clientH = document.documentElement.clientHeight || document.body.clientHeight;<br>    let docHeight = Math.max(scrollH, clientH);<br>4.确定元素大小 getBoundingClientRect()<br>    该方法返回一个矩形对象，包括left,top,right,bottom属性，表示元素在页面中相对于视口的位置</p>
+<pre><code># 十三.事件
+### 1.事件对象(event)</code></pre>
+<ol>
+<li>属性或方法<br> type // 被触发的事件类型<br> target // 事件的目标<br> currentTarget // 事件处理程序当前正在处理事件的那个元素<br> 注： 在事件处理程序内部，对象this始终等于currentTarget的值，而target只包含事件的实际目标<br> *** 一个函数处理多个事件可以使用switch(event.type)的方式<br> event.preventDefault() // 阻止事件的默认行为<br> event.stopPropagation() // 阻止事件冒泡<pre><code>### 2.事件类型</code></pre>
+</li>
+<li>鼠标和滚轮事件<br>  1.客户区坐标位置clientX/clientY  //表示事件发生时鼠标指针在视口中的水平和垂直位置<br>  2.页面坐标位置 pageX/pageY  //表示事件在页面中发生的位置<br>  3.屏幕坐标位置 //获取事件发生时在屏幕中的位置</li>
+<li>修改键(如果用户在触发事件时按下了shift/ctrl/alt/Meta,则返回true)<br>  event.shiftkey | event.altKey | event.metaKey | event.ctrlKey</li>
+<li>鼠标按钮(event.button)<br>// 对于mousedown和mouseup,其event中存在一个button属性，值为0表示主鼠标按钮，1表示中间鼠标按钮，2表示次鼠标按钮</li>
+<li>鼠标滚轮事件（mousewheel）<br>  1.兼容方案：<pre><code>  let getWheelDelta = function(event)&#123;
+      let wheelDelta = event.wheelDelta ? event.wheelDelta : (-event.detail * 40);
+      return wheelDelta
+  &#125;</code></pre>
+  *** 注：document在普通浏览器中通过mousewheel监听鼠标滚轮事件，在火狐中使用DOMMouseScroll监听</li>
+<li>键盘与文本事件</li>
+<li>变动事件<br>  1.DOMSubtreeModified | DOMNodeInserted | DOMNodeRemoved<br>  *例子<pre><code>  el.addEvent(&quot;DOMSubtreeModified&quot;, fn1)</code></pre>
+</li>
+<li>HTML5事件<br>  1.contextmenu事件（自定义上下文菜单）<br>  2.DOMContentLoaded事件（在形成完整dom树之后就触发，不理会图像，js文件，css文件等资源是否下载完成）<br>  3.hashchange事件（在URL的参数列表发生变化【即#号后面的所有字符串】时触发）<br>  注：必须要把hashchange添加给window对象，event对象包含两个属性oldURL和newURL,分别保存着参数列表变化前后的完整URL<br>  // 例子<br>  window.addEvent(“hashchange”, function(event){<pre><code>  // oldURL和newURL存在兼容问题，最好用location.hash代替
+  console.log(event.oldURL, event.newURL);</code></pre>
+  })<pre><code>### 3.性能与内存
+如果在页面写在之前没有清理干净事件处理程序，那他们就会滞留在内存中，每次加载完页面再卸载时，内存中滞留的对象就会增加，因为事件处理程序占用的内存并没有被释放。
+【解决方案】再页面卸载之前，先通过onunload事件处理程序移除所有事件处理程序。但是使用onunload时页面不会被缓存bfcache（即往返缓存）中。
+# 十四.表单脚本
+### 1.选择文本inputEl.select() [用于选择文本框中的所有文本，不接受参数，可以在任何时候调用]
+### 2.选择事件（select） //ie9+ 用户选择了文本并释放鼠标时触发
+### 3.取得选择的文本</code></pre>
+// ie9+ 为被选择的元素添加了两个属性，selectionStart和selectionEnd,保存的是基于零的数值，表示所选的文本范围<br>function getSelectedText(textbox){<br>  return textbox.value.substring(textbox.selectionStart, textbox.selectionEnd)<br>}<pre><code>### 4.选择部分文本</code></pre>
+// 所有文本框都有一个setSelectionRange(startIndex, endIndex)<br>textbox.setSelectionRange(0, 3)<pre><code>### 5.过滤输入</code></pre>
+</li>
+<li>屏蔽字符<br>// 通过阻止键盘按压事件的默认行为来屏蔽字符<br>el.addEvent(“keypress”,function(event){<br>  let charCode = event.charCode;<br>  // String.fromCharCode(charCode) 将字符编码转换为字符串<br>  if(!/\d/.test(String.fromCharCode(charCode))){<pre><code>  event.preventDefault();</code></pre>
+  }<br>}, false)<br>```<h3 id="6-富文本编辑"><a href="#6-富文本编辑" class="headerlink" title="6.富文本编辑"></a>6.富文本编辑</h3></li>
+<li>使用contenteditable属性</li>
+<li>有三个属性: true,false,inherit</li>
+<li>例子：</li>
+<li>操作富文本document.execCommand()<blockquote>
+<p>三个参数： 要执行的命令的名称，表示浏览器是否为当前命令提供用户界面的一个布尔值，执行命令必须的一个值（如果不需要值，则为null）</p>
+</blockquote>
+</li>
+</ol>
+<p>3.表单与富文本<br>*** 要想将富文本中的值传递给表单，则可在表单内创建一个隐藏的表单字段，将富文本的值赋给该表单字段的值</p>
+<h1 id="十四-HTML5脚本编程"><a href="#十四-HTML5脚本编程" class="headerlink" title="十四.HTML5脚本编程"></a>十四.HTML5脚本编程</h1><h3 id="1-跨文档消息传递"><a href="#1-跨文档消息传递" class="headerlink" title="1.跨文档消息传递"></a>1.跨文档消息传递</h3><p>主要指来源于不同域的页面间的消息传递，主要利用iframe</p>
+<pre><code>// 源页面
+window.onload = function()&#123;
+    // 获取源页面iframe的内容window对象
+    var iframeWindow = document.querySelector(&quot;#iframe&quot;).contentWindow;
+    // 向iframe发送消息，并指定源的地址，两个参数必填
+    iframeWindow.postMessage(&quot;xujiang&quot;, &quot;http://127.0.0.1:5500&quot;);
+    var mesWrap = document.querySelector(&quot;.mes-wrap&quot;);
+    // 接收iframe传来的消息
+    window.addEventListener(&quot;message&quot;,function(e)&#123;
+    // alert(e.data);
+        mesWrap.innerHTML = e.data;
+        iframeWindow.postMessage(&quot;你叫什么？&quot;, &quot;http://127.0.0.1:5500&quot;);
+    &#125;,false);
+&#125;
+// iframe页面，监听其他域传来的消息
+window.addEventListener(&quot;message&quot;,function(e)&#123;
+    // 向发送消息的域反馈消息，event对象的属性如下：
+    // data 传入的字符串数据
+    // origin 发送消息的文档所在的域
+    // source 发送消息的文档的window的代理
+    e.source.postMessage(&quot;hello&quot;, &quot;http://127.0.0.1:5500&quot;);
+&#125;,false);</code></pre>
+<h3 id="2-原生拖放"><a href="#2-原生拖放" class="headerlink" title="2.原生拖放"></a>2.原生拖放</h3><h3 id="3-自定义媒体播放"><a href="#3-自定义媒体播放" class="headerlink" title="3.自定义媒体播放"></a>3.自定义媒体播放</h3><pre><code>// 使用video,audio元素的play()和pause()方法，可以手工控制媒体的播放
+// 根据媒体元素的属性，我们可以自己实现一个视频，音频播放器</code></pre>
+<h3 id="4-高级定时器"><a href="#4-高级定时器" class="headerlink" title="4.高级定时器"></a>4.高级定时器</h3><pre><code>// 函数节流
+function throttle(method,context)&#123;
+    clearTimeout(method.tId);
+    method.tId = setTimeout(function()&#123;
+        method.call(context);
+    &#125;, 100)
+&#125;</code></pre>
+<h1 id="十五-离线应用与客户端存储"><a href="#十五-离线应用与客户端存储" class="headerlink" title="十五.离线应用与客户端存储"></a>十五.离线应用与客户端存储</h1><h3 id="1-离线检测"><a href="#1-离线检测" class="headerlink" title="1.离线检测"></a>1.离线检测</h3><pre><code>// 离线检测属性
+navigator.onLine // true or false
+// 离线事件
+online,offline</code></pre>
+<h3 id="2-应用缓存"><a href="#2-应用缓存" class="headerlink" title="2.应用缓存"></a>2.应用缓存</h3><pre><code>// 描述文件： offline.manifest，列出要下载和缓存的资源
+// ***文件扩展名以前推荐manifest,现在推荐用appcache
+CACHE MANIFEST
+#Comment
+file.js
+file.css
+// 与html文档关联
+&lt;html manifest=&quot;/offline.manifest&quot;&gt;</code></pre>
+<h3 id="3-web存储机制（cookie-localStorage-sessionStorage-indexedDB）"><a href="#3-web存储机制（cookie-localStorage-sessionStorage-indexedDB）" class="headerlink" title="3.web存储机制（cookie,localStorage,sessionStorage,indexedDB）"></a>3.web存储机制（cookie,localStorage,sessionStorage,indexedDB）</h3><h1 id="十六-新兴API"><a href="#十六-新兴API" class="headerlink" title="十六.新兴API"></a>十六.新兴API</h1><h3 id="1-requestAnimationFrame"><a href="#1-requestAnimationFrame" class="headerlink" title="1.requestAnimationFrame()"></a>1.requestAnimationFrame()</h3><pre><code>(function()&#123;
+    function draw(timestamp)&#123;
+        // 计算两次重绘的时间间隔
+        var drawStart = (timestamp || Date.now()),
+        diff = drawStart - startTime;
+        // 使用diff确定下一步的绘制时间
+        // 把startTime重写为这一次的绘制时间
+        startTime = drawStart;
+        // 重绘UI
+        requestAnimationFrame(draw);
+    &#125;
+    var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame,
+    startTime = window.mozAnimationStartTime || Date.now();
+    requestAnimationFrame(draw);
+&#125;)();</code></pre>
+<h3 id="2-File-API"><a href="#2-File-API" class="headerlink" title="2.File API"></a>2.File API</h3><pre><code>//通过监听change事件并读取files集合，就可以知道每个文件信息
+fileList.addEventListener(&quot;change&quot;, function(event)&#123;
+    var files = event.target.files,
+    i=0,
+    len = files.length;
+    while(i&lt;len)&#123;
+        console.log(files[i].name, files[i].type, files[i].size);
+        i++;
+    &#125;
+&#125;, false);
+// FileReader类型
+ reader = new FileReader();
+while(i&lt;len)&#123;
+    // reader.readAsDataURL(files[0]);
+    reader.readAsText(files[0]);
+    // reader.readAsBinaryString(files[0]);
+    //reader.readAsArrayBuffer(files[0]);
+    // 由于读取是异步的，所以支持load,error,progress等事件，progress在当读取了新数据是触发，每50ms触发一次
+    // 触发error事件时会将相关信息保存在error属性中，该属性保存了一个对象，只有一个属性code, 1表示未找到文件，2表示安全性错误，3表示读取中断，4表示文件不可读
+    reader.onload = function()&#123;
+        // 读取结果存在result属性中
+        console.log(reader.result);
+    &#125;
+    // 如果想中断读取，可以调用absort()方法，此时会触发loadend事件
+    // console.log(files[i].name, files[i].type, files[i].size);
+    i++;
+&#125;
+// 读取部分内容--file对象支持slice属性
+function blobSlice(blob, startByte, length)&#123;
+    // blob为文件对象，startByte为起始字节，length为要读取的字节数
+    if(blob.slice)&#123;
+        return blob.slice(startByte, length)
+    &#125;else if(blob.webkitSlice)&#123;
+        reutrn blob.webkitSlice(startByte, length)
+    &#125;else if(blob.mozSlice)&#123;
+        return blob.mozSlice(startByte, length)
+    &#125;else&#123;
+        retun null
+    &#125;
+&#125;
+var reader = new FileReader(),
+blob = blobSlice(files[0], 0, 32);
+if(blob)&#123;
+    reader.readAsText(blob);
+&#125;
+// 对象URL -- 指的是引用保存在File或Blob中数据的URL
+function createObjectURL(blob)&#123;
+    if(window.URL)&#123;
+        return window.URL.createObjectURL(blob);
+    &#125;else if(window.webkitURL)&#123;
+        return window.webkitURL.createObjectURL(blob);
+    &#125;else&#123;
+        return null
+    &#125;
+&#125;
+var url = createObjectURL(files[0]);
+if(url)&#123;
+    img.src = url;
+&#125;
+// 手工释放window.URL内存
+function revokeObjectURL(url)&#123;
+    if(window.URL)&#123;
+        window.URL.revokeObjectURL(url);
+    &#125;else if(window.webkitURL)&#123;
+        window.webkitURL.revokeObjectURL(url);
+    &#125;
+&#125;
+// 读取拖放的文件
+//使用XHR上传文件-- 利用FormData对象</code></pre>
+<h3 id="3-web-workers–-主要针对复杂的计算，不会影响用户体验"><a href="#3-web-workers–-主要针对复杂的计算，不会影响用户体验" class="headerlink" title="3.web workers– 主要针对复杂的计算，不会影响用户体验"></a>3.web workers– 主要针对复杂的计算，不会影响用户体验</h3><pre><code>// 页面worker
+var worker = new Worker(&quot;work.js&quot;);
+worker.postMessage(&quot;hello&quot;);
+worker.onmessage = function(event)&#123;
+    var data = event.data;
+    alert(data)
+&#125;
+worker.onerror = function(event)&#123;
+    console.log(&quot;Error:&quot; + event.filename,event.lineno,event.message);
+&#125;
+// 任何时候只要调用terminate()方法就可以停止worker工作
+// work对象内部 work.js
+// importScripts会保证引入文件的先后顺序执行，但下载是异步的
+importScripts(&quot;k1.js&quot;,&quot;k2.js&quot;);
+// k1.js中定义b=1,此时可以直接引用k1,k2中定义的变量和方法
+// work对象的全局对象：
+// navigator对象：包含onLine,appName,appVersion,userAgent,platform
+// 只读的location
+// setTimeout,setInterval,clearTimeout,clearInterval
+// XMLHttpRequest构造函数
+self.onmessage = function(event)&#123;
+    var data = event.data;
+    self.postMessage(c);
+&#125;</code></pre>
 
       </div>
       
@@ -510,18 +1105,12 @@
     
       <div class="post-nav">
 
-  <div class="post-nav-prev post-nav-item">
-    <a href="/2021/01/03/js-he-xin-zhi-shi/">
-      上一篇:    JavaScript核心知识
-    </a>
-  </div>
-
 
 
   <div class="post-nav-next post-nav-item">
-    <a href="/2021/01/02/javascript-shu-zu/">
+    <a href="/2021/01/02/jacss-ding-wei-xiang-jie/">
       <span>
-        下一篇:    JavaScript变量、数组 
+        下一篇:    JaCSS定位详解 
       </span>
     </a>
   </div>
