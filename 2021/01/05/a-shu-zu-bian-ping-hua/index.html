@@ -362,9 +362,8 @@
         
       </div>
       <div class="post-content">
-        <h1 id="数组扁平化"><a href="#数组扁平化" class="headerlink" title="数组扁平化"></a>数组扁平化</h1><p><strong>数组扁平化是指将多维数组变为一维数组：</strong><br><code>[1,[2,3,[4,5]]]   -----&gt;  [1,2,3,4,5]</code><br>实现</p>
-<hr>
-<h3 id="1-reduce"><a href="#1-reduce" class="headerlink" title="1.reduce"></a>1.reduce</h3><p>遍历数组每一项，若值为数组则递归遍历，否则concat。</p>
+        <h1 id="数组扁平化"><a href="#数组扁平化" class="headerlink" title="数组扁平化"></a>数组扁平化</h1><p><strong>数组扁平化是指将多维数组变为一维数组：</strong><br><code>[1,[2,3,[4,5]]]   -----&gt;  [1,2,3,4,5]</code></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="1-reduce"><a href="#1-reduce" class="headerlink" title="1.reduce"></a>1.reduce</h3><p>遍历数组每一项，若值为数组则递归遍历，否则concat。</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">flatten</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span>item<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
         <span class="token keyword">return</span> result<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token operator">?</span><span class="token function">flattten</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">:</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
