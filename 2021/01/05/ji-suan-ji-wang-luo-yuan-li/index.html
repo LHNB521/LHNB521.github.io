@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>数组扁平化 | LH</title>
+  <title>计算机网络原理 | LH</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -323,10 +323,10 @@
       
 
 
-<div class="post-detail-header lazyload" data-original="/medias/15.jpg" style="background: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" data-original="/medias/6.jpg" style="background: no-repeat; background-size: cover; 
   background-position: center center;">
   
-    <span class="title">数组扁平化</span>
+    <span class="title">计算机网络原理</span>
   
 </div>
 <div class="row justify-center">
@@ -344,8 +344,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/js/" class="">
-              js
+            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="">
+              计算机网络
             </a>
           
         </div>
@@ -354,23 +354,95 @@
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           
-            <a href="/categories/JavaSctipt/" class="">
-              JavaSctipt
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="">
+              计算机
             </a>
           
         </div>
         
       </div>
       <div class="post-content">
-        <h1 id="数组扁平化"><a href="#数组扁平化" class="headerlink" title="数组扁平化"></a>数组扁平化</h1><p><strong>数组扁平化是指将多维数组变为一维数组：</strong><br><code>[1,[2,3,[4,5]]]   -----&gt;  [1,2,3,4,5]</code></p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="1-reduce"><a href="#1-reduce" class="headerlink" title="1.reduce"></a>1.reduce</h3><p>遍历数组每一项，若值为数组则递归遍历，否则concat。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">flatten</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span>item<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> result<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token operator">?</span><span class="token function">flattten</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">:</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>reduce是数组的一种方法，它接受一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算一个值。<br>reduce包含两个参数：回调函数，传给total的初始值。</p>
-<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>（未完）</p>
+        <h1 id="计算机网络主要指的是TCP-IP协议栈"><a href="#计算机网络主要指的是TCP-IP协议栈" class="headerlink" title="计算机网络主要指的是TCP/IP协议栈"></a>计算机网络主要指的是TCP/IP协议栈</h1><blockquote>
+<p><strong>闲聊</strong></p>
+<blockquote>
+<p>TCP/IP是互联网的基石，互联网时代的最伟大的发明。<br>前端后端都有涉及<br>TCP/IP技术栈有一部分都隐藏于操作系统内核态，总有藏着掖着，老是见不得人，当然容易被遗忘。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><strong>TCP/IP协议体系的认知</strong></p>
+<blockquote>
+<ul>
+<li>一些概念<blockquote>
+<p>内核态<br>用户态<br>应用层（接触较多）<br>数据链路层<br>数据传输对等</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><strong>数据链路层</strong></p>
+<blockquote>
+<ul>
+<li>以太网帧的格式</li>
+<li>MTU（最大传输单元）概念</li>
+<li>ARP协议、RARP协议（即地址解析和逆地址解析）<blockquote>
+<p>一般归入链路层，网络和链路层的中间协议<br>报文格式<br>IP和MAC地址互查<br>ARP缓存</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><strong>网络层</strong></p>
+<blockquote>
+<ul>
+<li>掌握IP首部格式：如16位分片标识、DF不分片标志、MF更多分片标志、13位片偏移，8位生存时间TTL，16位的首部检验和等等</li>
+<li>掌握IP分片</li>
+<li>掌握IP选路（路由表）</li>
+<li>掌握ICMP协议<blockquote>
+<p>报文格式<br>报文的两大分类：查询+交错</p>
+<blockquote>
+<p>2种查询报文+5种差错报文</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><strong>传输层</strong></p>
+<blockquote>
+<ul>
+<li>掌握UDP协议：包括特点+首部各个字段</li>
+<li>掌握TCP协议：特点+首部字段+可靠机制</li>
+<li>TCP链接控制机制：三次握手、四次挥手、同时打开、同时关闭、半关闭</li>
+<li>TCP流量控制机制：滑动窗口、慢启动、拥塞避免、快速重传、快速恢复</li>
+<li>TCP超时重传机制：各种定时器（4个）</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><strong>应用层</strong></p>
+<blockquote>
+<ul>
+<li>掌握DNS协议</li>
+<li>掌握DNS协议的名字空间</li>
+<li>DNS指针查询（反向查找或逆向解析）基本原理</li>
+<li>DNS缓存<blockquote>
+<p>两条链接：控制连接+数据连接<br>两种工作模式：PASV+PORT<br>各种指令和响应码<br>FTP断点续传、匿名FTP</p>
+</blockquote>
+</li>
+<li>HTTP协议<blockquote>
+<p>报文格式：请求报文+响应报文+各种请求字段+响应头各种字段<br>http状态码</p>
+</blockquote>
+</li>
+<li>HTTPS协议<blockquote>
+<p>https详细握手过程<br>摘要算法、数字签名、数字证书的原理和过程</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</blockquote>
 
       </div>
       
@@ -379,16 +451,10 @@
     
       <div class="post-nav">
 
-  <div class="post-nav-prev post-nav-item">
-    <a href="/2021/01/05/ji-suan-ji-wang-luo-yuan-li/">
-      上一篇:    计算机网络原理
-    </a>
-  </div>
-
 
 
   <div class="post-nav-next post-nav-item">
-    <a href="/2021/01/05/shu-zu-bian-ping-hua/">
+    <a href="/2021/01/05/a-shu-zu-bian-ping-hua/">
       <span>
         下一篇:    数组扁平化 
       </span>
