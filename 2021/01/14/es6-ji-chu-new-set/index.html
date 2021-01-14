@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>ES6之Array.frome()方法 | LH</title>
+  <title>ES6 基础new Set | LH</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -323,10 +323,10 @@
       
 
 
-<div class="post-detail-header lazyload" data-original="/medias/4.jpg" style="background: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" data-original="/medias/13.jpg" style="background: no-repeat; background-size: cover; 
   background-position: center center;">
   
-    <span class="title">ES6之Array.frome()方法</span>
+    <span class="title">ES6 基础new Set</span>
   
 </div>
 <div class="row justify-center">
@@ -344,8 +344,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/JavaScript/" class="">
-              JavaScript
+            <a href="/tags/js/" class="">
+              js
             </a>
           
         </div>
@@ -353,40 +353,27 @@
         
       </div>
       <div class="post-content">
-        <h1 id="ES6之Array-from-方法"><a href="#ES6之Array-from-方法" class="headerlink" title="ES6之Array.from()方法"></a>ES6之Array.from()方法</h1><p>Array.from()方法就是将一个类数组对象或者可遍历对象转换成一个真正的数组。<br>那么什么是类数组对象呢？所谓类数组对象，最基本的要求就是具有length属性的对象。</p>
-<h2 id="1-将类数组对象转换为真正的数组："><a href="#1-将类数组对象转换为真正的数组：" class="headerlink" title="1.将类数组对象转换为真正的数组："></a>1.将类数组对象转换为真正的数组：</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arrayLike <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token number">0</span><span class="token punctuation">:</span><span class="token string">'tom'</span><span class="token punctuation">,</span>
-    <span class="token number">1</span><span class="token punctuation">:</span><span class="token string">'22'</span><span class="token punctuation">,</span>
-    <span class="token number">2</span><span class="token punctuation">:</span><span class="token string">'男'</span><span class="token punctuation">,</span>
-    <span class="token number">3</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'jane'</span><span class="token punctuation">,</span><span class="token string">'john'</span><span class="token punctuation">,</span><span class="token string">'Mary'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token string">'length'</span><span class="token punctuation">:</span><span class="token number">4</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">let</span> arr <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>     <span class="token comment" spellcheck="true">//['tom','22','男',['jane','john','Mary']]</span></code></pre>
-<p>那么，如果将上面代码中length属性去掉呢？<br>实践证明，答案会是一个长度为0的空数组。<br>这里将代码再改一下，就是具有length属性，但是对象的属性名不再是数字类型的，而是其他字符串型的，代码如下：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arrayLike <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'name'</span><span class="token punctuation">:</span><span class="token string">'tom'</span><span class="token punctuation">,</span>
-    <span class="token string">'age'</span><span class="token punctuation">:</span><span class="token string">'22'</span><span class="token punctuation">,</span>
-    <span class="token string">'sex'</span><span class="token punctuation">:</span><span class="token string">'男'</span><span class="token punctuation">,</span>
-    <span class="token string">'friends'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'jane'</span><span class="token punctuation">,</span><span class="token string">'john'</span><span class="token punctuation">,</span><span class="token string">'Mary'</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">let</span> arr <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">//[undefined,undefined,undefined,undefined]</span></code></pre>
-<p>会发现结果长度为4，元素均为undefined的数组<br>由此可见，要将一类数组对象转换为一个真正数组，必须具备一下条件：</p>
-<ul>
-<li>1.该类数组对象必须具有length属性，用于指定数组的长度。如果没有length属性，那么转换后的数组是一个空数组。</li>
-<li>2.该数组对象的属性名必须为数值型或者字符串型的数字。<br><font color = red>ps:该类数组对象的属性名可以加引导，也可以不加引导。</font></li>
+        <h1 id="Es6-基础之-new-set"><a href="#Es6-基础之-new-set" class="headerlink" title="Es6 基础之 new set"></a>Es6 基础之 new set</h1><p>Set对象存储的值总是唯一的<br>Set对象方法<br>| 方法 | 描述 |<br>| —- | —-|<br>| add | 添加某个值，返回Set对象本身|<br>| clear | 删除所有的键/值对，没有返回结果|<br>| delete | 删除某个键，返回true、如果删除失败，返回false|<br>| forEach | 对每个元素执行指定操作|<br>| has | 返回一个布尔值，表示某个键是否在当前Set对象之中|</p>
+<h2 id="Set对象作用"><a href="#Set对象作用" class="headerlink" title="Set对象作用"></a>Set对象作用</h2><ul>
+<li>数组去重<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// [1,2,3,4,5]</span>
+Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//[1,2,3,4,5]</span>
+<span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token string">'ababbc'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//"abc"字符串去重</span>
+<span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token string">'ice doughnut'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//Set(11) {"i", "c", "e", " ", "d", …}</span></code></pre>
+</li>
+<li>并集<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> union<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">,</span><span class="token operator">...</span>b<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//{1,2,3,4}</span></code></pre>
+</li>
+<li>交集<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> intersect <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">=</span><span class="token operator">></span> b<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//{2,3}</span></code></pre>
+</li>
+<li>差集<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> difference  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">!</span>b<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// {1}</span></code></pre>
+</li>
 </ul>
-<h2 id="2-将Set结构的数据转换为真正的数组："><a href="#2-将Set结构的数据转换为真正的数组：" class="headerlink" title="2.将Set结构的数据转换为真正的数组："></a>2.将Set结构的数据转换为真正的数组：</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">97</span><span class="token punctuation">,</span><span class="token number">9797</span><span class="token punctuation">,</span><span class="token number">564</span><span class="token punctuation">,</span><span class="token number">134</span><span class="token punctuation">,</span><span class="token number">45642</span><span class="token punctuation">]</span>
-<span class="token keyword">let</span> <span class="token keyword">set</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span><span class="token keyword">set</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">//[12,45,97,9797,564,134,45642]</span></code></pre>
-<p>Array.from还可以接受第二个参数，作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组。如下：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">97</span><span class="token punctuation">,</span><span class="token number">9797</span><span class="token punctuation">,</span><span class="token number">564</span><span class="token punctuation">,</span><span class="token number">134</span><span class="token punctuation">,</span><span class="token number">45642</span><span class="token punctuation">]</span>
-<span class="token keyword">let</span> <span class="token keyword">set</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span><span class="token keyword">set</span><span class="token punctuation">,</span> item <span class="token operator">=</span><span class="token operator">></span> item <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// [ 13, 46, 98, 9798, 565, 135, 45643 ]</span></code></pre>
-<h2 id="3-将字符串转换为数组："><a href="#3-将字符串转换为数组：" class="headerlink" title="3.将字符串转换为数组："></a>3.将字符串转换为数组：</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'hello world!'</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d", "!"]</span></code></pre>
-<h2 id="4-Array-from参数是一个真正的数组："><a href="#4-Array-from参数是一个真正的数组：" class="headerlink" title="4.Array.from参数是一个真正的数组："></a>4.Array.from参数是一个真正的数组：</h2><p><code>console.log(Array.from([12,45,47,56,213,4654,154]))</code><br>像这种情况，Array.from返回一个一模一样的新数组</p>
 
       </div>
       
@@ -395,18 +382,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
     
       <div class="post-nav">
 
-  <div class="post-nav-prev post-nav-item">
-    <a href="/2021/01/14/es6-ji-chu-new-set/">
-      上一篇:    ES6 基础new Set
-    </a>
-  </div>
-
 
 
   <div class="post-nav-next post-nav-item">
-    <a href="/2021/01/05/ji-suan-ji-wang-luo-yuan-li/">
+    <a href="/2021/01/14/es6-zhi-array.from-fang-fa/">
       <span>
-        下一篇:    计算机网络原理 
+        下一篇:    ES6之Array.frome()方法 
       </span>
     </a>
   </div>
