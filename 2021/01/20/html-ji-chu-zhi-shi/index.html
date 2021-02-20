@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>ES6 基础new Set | LH</title>
+  <title>HTML基础知识 | LH</title>
   
     
 <link rel="stylesheet" href="/js/aos/aos.css">
@@ -323,10 +323,10 @@
       
 
 
-<div class="post-detail-header lazyload" data-original="/medias/13.jpg" style="background: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" data-original="/medias/2.jpg" style="background: no-repeat; background-size: cover; 
   background-position: center center;">
   
-    <span class="title">ES6 基础new Set</span>
+    <span class="title">HTML基础知识</span>
   
 </div>
 <div class="row justify-center">
@@ -336,7 +336,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-01-14</span>
+        <span class="post-time">2021-01-20</span>
       </div>
       
       <div class="post-tags-categories">
@@ -344,8 +344,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/js/" class="">
-              js
+            <a href="/tags/html/" class="">
+              html
             </a>
           
         </div>
@@ -353,54 +353,21 @@
         
       </div>
       <div class="post-content">
-        <h1 id="Es6-基础之-new-set"><a href="#Es6-基础之-new-set" class="headerlink" title="Es6 基础之 new set"></a>Es6 基础之 new set</h1><p>Set对象存储的值总是唯一的<br>Set对象方法</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>add</td>
-<td>添加某个值，返回Set对象本身</td>
-</tr>
-<tr>
-<td>clear</td>
-<td>删除所有的键/值对，没有返回结果</td>
-</tr>
-<tr>
-<td>delete</td>
-<td>删除某个键，返回true、如果删除失败，返回false</td>
-</tr>
-<tr>
-<td>forEach</td>
-<td>对每个元素执行指定操作</td>
-</tr>
-<tr>
-<td>has</td>
-<td>返回一个布尔值，表示某个键是否在当前Set对象之中</td>
-</tr>
-</tbody></table>
-<h2 id="Set对象作用"><a href="#Set对象作用" class="headerlink" title="Set对象作用"></a>Set对象作用</h2><ul>
-<li>数组去重<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// [1,2,3,4,5]</span>
-Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//[1,2,3,4,5]</span>
-<span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token string">'ababbc'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//"abc"字符串去重</span>
-<span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token string">'ice doughnut'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//Set(11) {"i", "c", "e", " ", "d", …}</span></code></pre>
-</li>
-<li>并集<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> b<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> union<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">,</span><span class="token operator">...</span>b<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//{1,2,3,4}</span></code></pre>
-</li>
-<li>交集<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> intersect <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">=</span><span class="token operator">></span> b<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//{2,3}</span></code></pre>
-</li>
-<li>差集<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> difference  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">!</span>b<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// {1}</span></code></pre>
-</li>
+        <h1 id="HTML基础知识"><a href="#HTML基础知识" class="headerlink" title="HTML基础知识"></a>HTML基础知识</h1><h2 id="HTML结构"><a href="#HTML结构" class="headerlink" title="HTML结构"></a>HTML结构</h2><p>HTML的结构一般包括<code>&lt;head&gt;</code>标签和<code>&lt;body&gt;</code>标签，<code>&lt;head&gt;</code>和<code>&lt;body&gt;</code>这两个标记符分别表示网页的头部和正文。头部中可包含页面的标题、关键词、描述说明等内容，他本身不作为内容显示，但影响网页显示的效果。<code>&lt;body&gt;&lt;/body&gt;</code>当中是网页实际显示的内容，正文标记符又被称为实体标记。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>页面标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>我的第一个标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>我的第一个段落。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<ul>
+<li><code>DOCTYPE</code>声明了文档的类型</li>
+<li><code>&lt;html&gt;</code>标签是HTML页面的根元素，该标签的结束标志位<code>&lt;/html&gt;</code>、</li>
+<li><code>&lt;head&gt;</code>标签包含了文档的元数据（<code>meta</code>），如<code>&lt;meta charset=&quot;utf-8&quot;&gt;</code>式为utf-8。</li>
 </ul>
 
       </div>
@@ -410,18 +377,12 @@ Array<span class="token punctuation">.</span><span class="token keyword">from</s
     
       <div class="post-nav">
 
-  <div class="post-nav-prev post-nav-item">
-    <a href="/2021/01/20/html-ji-chu-zhi-shi/">
-      上一篇:    HTML基础知识
-    </a>
-  </div>
-
 
 
   <div class="post-nav-next post-nav-item">
-    <a href="/2021/01/14/es6-zhi-array.from-fang-fa/">
+    <a href="/2021/01/14/es6-ji-chu-new-set/">
       <span>
-        下一篇:    ES6之Array.frome()方法 
+        下一篇:    ES6 基础new Set 
       </span>
     </a>
   </div>
